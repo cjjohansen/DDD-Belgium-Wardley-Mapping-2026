@@ -8,7 +8,7 @@ Five group exercises, all on the same scenario: **Harbour Insurance**.
 | 02 Evolution: the map wakes up | [Exercise 3: Spread it out](03-spread-it-out.md) |
 | 03 Tea shop at rush hour | [Exercise 4A: Find the constraint, 4B: Draw three pipelines](04-constraint-and-pipelines.md) |
 | 04 Strategy and the OODA loop, knowledge architecture | [Exercise 5: Simplify and move](05-simplify-and-move.md) |
-| 05 A real map: event modeling tooling | Discussion |
+| 05 A real map: event modeling tooling | Event modeling tooling map |
 
 The printable [handout](../handout/ddd-belgium-wardley-handout.pdf) has a worksheet for each exercise.
 
@@ -25,9 +25,11 @@ Groups of four, with these roles:
 - **Domain expert:** knows the company, has the final word and decides.
 - **Facilitator:** starts the talk and makes sure everyone is heard.
 - **Timekeeper:** keeps time and keeps the group moving.
-- **Clerk:** handles the materials and the canvas, and brings questions to CJ.
+- **Clerk:** handles the materials and the canvas, writes down the questions and the decisions, and brings questions to CJ.
 
 Feel free to swap roles after each exercise.
+
+Work one, two, four in every exercise: think on your own first, then share in pairs, then in your group of four.
 
 ## Materials
 
