@@ -1,62 +1,46 @@
-# Workshop Exercises
+# Workshop exercises
 
-Six hands-on exercises building progressively on the **Harbour Insurance** scenario.
+Five group exercises, all on the same scenario: **Harbour Insurance**.
 
-## Quick Links
+| Talk | Then, in your group |
+| --- | --- |
+| 01 Cup of tea | [Exercise 1: Who needs what?](01-who-needs-what.md) and [Exercise 2: Build the chain](02-build-the-chain.md) |
+| 02 Evolution: the map wakes up | [Exercise 3: Spread it out](03-spread-it-out.md) |
+| 03 Tea shop at rush hour | [Exercise 4A: Find the constraint, 4B: Draw three pipelines](04-constraint-and-pipelines.md) |
+| 04 Strategy and the OODA loop, knowledge architecture | [Exercise 5: Simplify and move](05-simplify-and-move.md) |
+| 05 A real map: event modeling tooling | Discussion |
 
-1. [Cup of Tea](01-cup-of-tea.md) - Build your first map
-2. [Spread It Out](02-spread-it-out.md) - Add evolution
-3. [Three Pipelines](03-pipelines.md) - Map multiple approaches
-4. [Find the Constraint](04-constraint.md) - Theory of Constraints
-5. [Cut It Down](05-cut-it-down.md) - Focus with submaps
-6. [Make a Move](06-make-a-move.md) - Strategic gameplay
+The printable [handout](../handout/ddd-belgium-wardley-handout.pdf) has a worksheet for each exercise.
 
-## The Scenario
+## The scenario
 
-**Harbour Insurance:** Marine insurance (ships, cargo, port businesses) around Antwerp.
-- 2,000 employees, 300,000 policies
-- 6 product teams, ~40 developers, 1 architect
-- AI coding agents deployed
+Harbour Insurance insures ships, cargo and the businesses around the port of Antwerp. It has about 2,000 employees, 300,000 policies, 6 product teams, about 40 developers and one architect.
 
-**The puzzle:** Code written 3x faster, delivery unchanged. PRs wait 3 days for review (was <1 day).
+Every team now has AI coding agents. Code arrives in hours, not days, yet customers get new features no faster than before. Your task tonight: map the system, find the constraint, and choose a move.
 
-**Your mission:** Map the system, find the constraint, work it.
+## Your group
+
+Groups of four, with these roles:
+
+- **Domain expert:** knows the company, has the final word and decides.
+- **Facilitator:** starts the talk and makes sure everyone is heard.
+- **Timekeeper:** keeps time and keeps the group moving.
+- **Clerk:** handles the materials and the canvas, and brings questions to CJ.
+
+Feel free to swap roles after each exercise.
 
 ## Materials
 
-- Wardley Mapping Canvas (print from [learnwardleymapping.com](https://learnwardleymapping.com/portfolio/wardley-mapping-canvas/))
-- Sticky notes + markers
-- OR digital: [MapAware](https://mapaware.io/), [Online Wardley Maps](https://create.wardleymaps.ai/), Miro
+- The [Miro board](https://miro.com/app/board/uXjVEcI-7Zo=/) we map on during the workshop
+- The Wardley Mapping Canvas by Ben Mosior ([hiredthought.com/wardley-mapping](https://hiredthought.com/wardley-mapping))
+- Or on paper: sticky notes and markers
 
-## Group Format
+## Marks used on the maps
 
-**Groups of 3-5** with rotating roles:
-- **Domain Expert** - Makes decisions
-- **Facilitator** - Guides conversation
-- **Timekeeper** - Keeps pace
-- **Clerk** - Handles materials, asks questions
+- **Striped bar** on a component: the constraint
+- **Solid bar** on an evolution line: inertia
+- **Dashed arrow:** natural evolution
+- **Solid arrow:** a move we intend
+- **Double ring:** a component with its own submap
 
-Rotate roles after each exercise.
-
-## Time Budget
-
-| Exercise | Talk | Work | Discussion | Total |
-|----------|------|------|------------|-------|
-| 1. Cup of tea | 10m | 15m | 5m | 30m |
-| 2. Evolution | 5m | 10m | 5m | 20m |
-| 3. Pipelines | 10m | 15m | 5m | 30m |
-| 4. Constraint | 10m | 15m | 10m | 35m |
-| 5. Focus | 5m | 15m | 5m | 25m |
-| 6. Move | 5m | 15m | 10m | 30m |
-| **Total** | | | | **~170m (3h)** |
-
-## Key Notation
-
-- **Solid double arrow** → Intended move
-- **Dashed arrow** → Natural evolution
-- **Red** → Future state
-- **Striped bar** → Constraint
-- **Solid bar** → Inertia
-- **Double ring** → Submap
-
-Start with [Exercise 1: Cup of Tea](01-cup-of-tea.md)
+Start with [Exercise 1: Who needs what?](01-who-needs-what.md)
