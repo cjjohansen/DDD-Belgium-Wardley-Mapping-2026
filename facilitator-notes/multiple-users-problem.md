@@ -306,6 +306,141 @@ Add facilitation guidance between Exercise 1 and Exercise 2 to help groups pick 
 
 ---
 
+## Recommended Revised Exercise Flow
+
+Based on the analysis above, here's the recommended workshop structure that solves the multiple users problem and improves pedagogical flow:
+
+### The New Structure (5 Exercises, 65 minutes)
+
+**Exercise 1: Who needs what?** (10 min)
+- **Task:** Identify users and their needs (discovery only)
+- **Output:** Miro canvas with blue user stickies and green need stickies
+- **Answer slide:** Screenshot of actual Miro board (not a Wardley map)
+- **No value chain, no mapping yet** - just brainstorming
+
+**[FACILITATION MOMENT]** (5 min)
+- After Exercise 1 completes, facilitator pauses the room
+- "You've identified multiple users. To build ONE map, we need ONE anchor."
+- "What's our core question? [Why is delivery slow?]"
+- "Whose need matters most for that question? [Management → Time to market]"
+- "The other needs will become components in your chain"
+- Groups reach consensus on their anchor
+
+**Exercise 2: Build the chain** (10 min)
+- **Task:** Build value chain from your chosen anchor, stack by visibility
+- **Output:** Vertical value chain (no evolution axis yet)
+- **Answer slide:** Wardley map with components stacked vertically (all at x=0.5)
+- Focus on dependency relationships and visibility layering
+
+**Exercise 3: Spread it out** (10 min)
+- **Task:** Add the evolution axis (Genesis → Custom → Product → Commodity)
+- **Output:** Full 2D Wardley map
+- **Answer slide:** Map with components positioned across evolution
+- Discuss disagreements about placement
+
+**Exercise 4: Find the constraint and the pipelines** (15 min)
+- **Task:** Apply Theory of Constraints to find the bottleneck
+  - Where does work pile up? (Code review / Reviewers)
+  - Notice there are 3 pipelines: code, quality, release
+  - AI sped up code pipeline, constraint is in quality pipeline
+  - Mark constraint (striped bar) and inertia (solid bar)
+- **Output:** Map with constraint, inertia, and three pipelines identified
+- **Why this order:** Constraints are more important than pipelines; pipelines are analytical tool to understand constraint
+
+**Exercise 5: Simplify and move** (15 min)
+- **Task:**
+  - Cut the map down to focus on constraint (remove noise)
+  - Pick one strategic move (exploit or elevate)
+  - Mark the move on the map
+- **Output:** Simplified map with one strategic move marked
+- Discuss chosen gameplay patterns
+
+**Total time:** 5 + 10 + 10 + 15 + 15 = 65 minutes (vs. 90 min original)
+
+---
+
+### Key Changes from Original Structure
+
+**Original structure problems:**
+1. Exercise 1 included value chain building → Groups struggled with 5 anchors
+2. Exercise 1 answer showed Wardley map with hidden evolution → Confusing
+3. Pipelines came before constraints → Wrong priority
+4. 6 separate exercises → Too granular, 90 minutes
+
+**New structure solutions:**
+1. ✅ Exercise 1 is pure discovery → No struggle, everyone succeeds
+2. ✅ Facilitation moment → Teaches scoping principle explicitly
+3. ✅ Exercise 2 builds value chain → With one anchor from facilitation
+4. ✅ Constraints before pipelines → Correct priority
+5. ✅ Pipelines merged into constraint exercise → They're tools for analysis, not separate concept
+6. ✅ 5 exercises → Tighter, more focused, 65 minutes
+
+---
+
+### Changes Required to Implement
+
+**Slide deck:**
+- **Slide 24 (Ex1 instructions):** Remove "build value chain" - just "identify users and needs"
+- **Slide 26 (Ex1 answer):** Replace Wardley map with Miro board screenshot
+- **New slide 26.5:** Facilitation transition - "Now pick one anchor together"
+- **Slides 27-29 (Ex2):** "Build the value chain from your anchor, stack by visibility"
+- **Ex2 answer:** New diagram with NO evolution (all components at x=0.5)
+- **Section reordering:** Move constraint section BEFORE pipelines section
+- **Ex4:** Merge pipelines into constraint exercise
+- **Ex5+6:** Merge into one exercise
+
+**Exercise markdown files:**
+- `01-cup-of-tea.md` → Remove value chain instructions, just discovery
+- `02-spread-it-out.md` → Rename to `02-build-the-chain.md`, add value chain task
+- New `03-spread-it-out.md` → Evolution axis (was old Ex2)
+- `04-constraint.md` → Expand to include pipelines analysis
+- `05-cut-it-down.md` + `06-make-a-move.md` → Merge into `05-simplify-and-move.md`
+
+**Diagram files:**
+- New diagram needed: Value chain with no evolution (all x=0.5) for Ex2 answer
+- Exercise 1 answer: Use Miro board screenshot instead of diagram
+
+---
+
+### Pedagogical Benefits
+
+**Shu-Ha-Ri alignment:**
+- Ex1 (Shu): Pure rule-following - "List users and needs"
+- Facilitation (Shu→Ha): Teaching moment - "Here's WHY we pick one anchor"
+- Ex2-3 (Shu): Rule-following - "Build chain, add evolution"
+- Ex4-5 (Ha): Beginning to apply judgment - "Where's constraint? What move?"
+
+**Progressive disclosure:**
+1. Discovery (Ex1)
+2. Structure (Ex2: chain + visibility)
+3. Context (Ex3: evolution)
+4. Analysis (Ex4: constraint + pipelines)
+5. Strategy (Ex5: simplify + move)
+
+**Time efficiency:**
+- 25 minutes saved (90 → 65 min)
+- Better use of time (no wasted struggle, focused exercises)
+- Room for discussion and reflection
+
+---
+
+## Implementation Priority
+
+**High priority (fixes pedagogical issues):**
+1. Remove value chain from Exercise 1
+2. Add facilitation moment between Ex1 and Ex2
+3. Create Ex2 answer diagram with no evolution
+
+**Medium priority (improves flow):**
+4. Reorder: Constraints before pipelines
+5. Merge pipelines into constraint exercise
+
+**Lower priority (polish):**
+6. Merge Ex5+6 into one exercise
+7. Update all exercise markdown files
+
+---
+
 **Document status:** Analysis from DDD Belgium 2026 workshop observation
 **Author:** Christian Johansen (CJ) + Claude (analysis)
 **Date:** October 2026
