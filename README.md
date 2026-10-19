@@ -19,7 +19,7 @@ Wardley mapping, one click at a time.
 - **[PDF Deck](deck/ddd-belgium-wardley.pdf)** - Printable version (4.9 MB)
 - **[Handout](handout/ddd-belgium-wardley-handout.pdf)** - 10 A4 pages: worksheets for the exercises and a short reference
 - **[Miro board](https://miro.com/app/board/uXjVEcI-7Zo=/)** - The board we map on during the workshop
-- **[Exercises](exercises/)** - Six progressive group exercises
+- **[Exercises](exercises/)** - Five group exercises on one scenario
 - **[Resources](resources.md)** - Books, tools, articles, community
 
 ## What You'll Learn
@@ -32,14 +32,13 @@ Wardley mapping, one click at a time.
 
 ## Workshop Format (3-3.5 hours)
 
-Each of 6 sections: 5-10 min talk + 15 min group exercise + discussion
+Each section is a short talk, then group work, then a discussion. We learn to draw the map first, and use it for strategy at the end.
 
-1. **Cup of tea** - Value chains, visibility, evolution
-2. **Strategy** - Five factors, OODA, climate patterns
-3. **Pipelines** - Spec/code/quality approaches
-4. **Tea shop at rush hour** - Theory of Constraints
-5. **Knowledge architecture** - Focus with submaps
-6. **EM tooling** - Real governance map
+1. **Cup of tea** - Users, needs and the value chain. Exercises 1 and 2
+2. **Evolution: the map wakes up** - Evolution, climate and co-evolution. Exercise 3
+3. **Tea shop at rush hour** - Theory of Constraints and pipelines. Exercises 4A and 4B
+4. **Strategy and the OODA loop, knowledge architecture** - Choosing a move, cutting a map down. Exercise 5
+5. **A real map** - Event modeling tooling
 
 ## The Scenario: Harbour Insurance
 
