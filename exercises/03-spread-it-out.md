@@ -31,14 +31,4 @@ Practices evolve too. When servers became a utility, autoscaling replaced capaci
 - Which placement surprised you?
 - Where did your group disagree?
 
-## Afterwards: use appropriate methods
-
-One way of working does not fit the whole map. Pick the way of working by the stage each component is in.
-
-| | Genesis, custom built | Product | Commodity, utility |
-| --- | --- | --- | --- |
-| The goal | Learn fast | Get it right | Cut cost and variation |
-| How we work | Agile: small experiments | Lean: improve the flow | Six Sigma: standardise and automate |
-| How we get it | Build it ourselves | Buy it and fit it in | Rent it as a utility |
-
 Next: [Exercise 4: Find the constraint, draw three pipelines](04-constraint-and-pipelines.md)

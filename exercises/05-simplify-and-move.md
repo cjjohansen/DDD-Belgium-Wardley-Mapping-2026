@@ -3,6 +3,16 @@
 **Time:** about 20 minutes
 **After:** strategy and the OODA loop, and knowledge architecture
 
+## Background: one doctrine, use appropriate methods
+
+One way of working does not fit the whole map. Pick the way of working by the stage each component is in, as you placed it in Exercise 3. This helps when you choose your move.
+
+| | Genesis, custom built | Product | Commodity, utility |
+| --- | --- | --- | --- |
+| The goal | Learn fast | Get it right | Cut cost and variation |
+| How we work | Agile: small experiments | Lean: improve the flow | Six Sigma: standardise and automate |
+| How we get it | Build it ourselves | Buy it and fit it in | Rent it as a utility |
+
 ## First: cut it down
 
 Your map probably has 15 to 25 components by now. That is too many for one decision.
