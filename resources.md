@@ -20,7 +20,7 @@ The canonical text. 19 chapters covering needs → maps → climate → doctrine
 
 | Book | Author | Why Read | Link |
 |------|--------|----------|------|
-| **Architecture for Flow** | Susanne Kaiser (2025) | **Best for DDD.** Integrates Wardley + Strategic DDD + Team Topologies | [O'Reilly](https://www.oreilly.com/library/view/architecture-for-flow/) |
+| **Architecture for Flow** | Susanne Kaiser (2025) | **Best for DDD.** Integrates Wardley + Strategic DDD + Team Topologies | [O'Reilly](https://www.oreilly.com/library/view/architecture-for-flow/9780137392759/) |
 | **Architecture Modernization** | Nick Tune (2024) | Ch. 5: Strategy cycle, mapping, climatic forces | [Manning](https://www.manning.com/books/architecture-modernization) |
 | **Collaborative Software Design** | Roozen et al (2024) | Ch. 10: Facilitation with value-chain maps | [Manning](https://www.manning.com/books/collaborative-software-design) |
 
@@ -36,8 +36,8 @@ The canonical text. 19 chapters covering needs → maps → climate → doctrine
 
 | Book | Author | Why Read | Link |
 |------|--------|----------|------|
-| **Flow Architectures** | James Urquhart (2021) | Built entirely on event-driven integration map | [O'Reilly](https://www.oreilly.com/library/view/flow-architectures/) |
-| **Enabling Microservice Success** | Sarah Wells (2024) | Ch. 11: Build/buy/standardize decisions | [O'Reilly](https://www.oreilly.com/library/view/enabling-microservice-success/) |
+| **Flow Architectures** | James Urquhart (2021) | Built entirely on event-driven integration map | [O'Reilly](https://www.oreilly.com/library/view/flow-architectures/9781492075882/) |
+| **Enabling Microservice Success** | Sarah Wells (2024) | Ch. 11: Build/buy/standardize decisions | [O'Reilly](https://www.oreilly.com/library/view/enabling-microservice-success/9781098130787/) |
 
 ### For Adoption
 
@@ -80,7 +80,7 @@ The canonical text. 19 chapters covering needs → maps → climate → doctrine
 - [Three Types of Inertia](https://tristanls.medium.com/a-case-for-three-types-of-inertia-and-constraint-on-a-wardley-map-1def2c44142e)
 
 **Julius Gamanyi:**
-- [Relating Wardley to ToC](https://juliusgamanyi.com/2020/03/09/relating-wardley-mapping-to-the-theory-of-constraints/) - Five focusing steps
+- [Relating Wardley Mapping to Theory of Constraints](https://juliusgamanyi.com/2020/03/09/relating-wardley-mapping-to-the-theory-of-constraints/) (2020) - Five focusing steps applied to maps
 
 ## Online Tools
 
