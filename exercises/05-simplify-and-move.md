@@ -49,6 +49,14 @@ Some moves that fit Harbour Insurance:
 | Architecture rules become code and automated checks | The architect | They lose direct control |
 | Domain knowledge is written down and kept up to date | Domain experts | Their knowledge becomes less scarce |
 
+## Last: the travelling map
+
+1. Two people from each group move to the next group and take their map with them. Group 1 goes to group 2, and group 6 goes to group 1.
+2. The visitors explain their question, their cut-down map and their move.
+3. The two hosts ask: what did you leave out? Would you dare to make that move?
+4. Then swap: the hosts explain their own map.
+5. After about 10 minutes, go back to your own group.
+
 ## Back together
 
 - Is the story clearer after cutting the map down?
