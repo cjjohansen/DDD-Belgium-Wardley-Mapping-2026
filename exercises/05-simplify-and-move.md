@@ -51,7 +51,7 @@ Some moves that fit Harbour Insurance:
 
 ## Last: the travelling map
 
-1. Two people from each group move to the next group and take their map with them. Group 1 goes to group 2, and group 6 goes to group 1.
+1. Two people from each group visit another group and take their map with them. Go to the group with the next higher card (nines visit tens, tens visit jacks, and so on). The group with the highest card goes to the group with the lowest.
 2. The visitors explain their question, their cut-down map and their move.
 3. The two hosts ask: what did you leave out? Would you dare to make that move?
 4. Then swap: the hosts explain their own map.
