@@ -20,7 +20,7 @@ The canonical text. 19 chapters covering needs → maps → climate → doctrine
 
 | Book | Author | Why Read | Link |
 |------|--------|----------|------|
-| **Architecture for Flow** | Susanne Kaiser (2025) | **Best for DDD.** Integrates Wardley + Strategic DDD + Team Topologies | [O'Reilly](https://www.oreilly.com/library/view/architecture-for-flow/9780137392759/) |
+| **Architecture for Flow** | Susanne Kaiser (2025) | **Best for DDD.** Integrates Wardley + Strategic DDD + Team Topologies | [O'Reilly](https://www.oreilly.com/library/view/architecture-for-flow/9780137392759/) · [Talks](https://susannekaiser.net/talks/) |
 | **Architecture Modernization** | Nick Tune (2024) | Ch. 5: Strategy cycle, mapping, climatic forces | [Manning](https://www.manning.com/books/architecture-modernization) |
 | **Collaborative Software Design** | Roozen et al (2024) | Ch. 10: Facilitation with value-chain maps | [Manning](https://www.manning.com/books/collaborative-software-design) |
 
