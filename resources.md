@@ -105,6 +105,7 @@ The canonical text. 19 chapters covering needs → maps → climate → doctrine
 ## Video
 
 **Simon Wardley:**
+- [Wardley Mapping Part 1: How and why to map your business](https://www.youtube.com/watch?v=KkePAhnkHeg) - AWS Public Sector, YouTube
 - [Mapping the Future](https://businessofsoftware.org/talks/mapping-the-future-of-your-business) - Business of Software 2024
 
 **Erik Schön:**
