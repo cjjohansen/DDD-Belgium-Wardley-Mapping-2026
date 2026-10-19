@@ -1,0 +1,16 @@
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Temporary
+*.tmp
+*.log
+
+# Build (if regenerating later)
+node_modules/
