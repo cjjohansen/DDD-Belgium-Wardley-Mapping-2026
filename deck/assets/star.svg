@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="hsl(45 85% 55%)" />
+      <stop offset="100%" stop-color="hsl(40 70% 50%)" />
+    </linearGradient>
+  </defs>
+  <path d="M31.9999 4.17395L34.1296 26.8584L51.6759 12.324L37.1415 29.8703L59.826 32L37.1415 34.1298L51.6759 51.6761L34.1296 37.1416L31.9999 59.8261L29.8702 37.1416L12.3239 51.6761L26.8583 34.1298L4.17383 32L26.8583 29.8703L12.3239 12.324L29.8702 26.8584L31.9999 4.17395Z" fill="url(#starGradient)"/>
+</svg>
