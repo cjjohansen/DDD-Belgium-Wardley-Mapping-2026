@@ -17,6 +17,8 @@ Wardley mapping, one click at a time.
 
 - **[HTML Deck](deck/ddd-belgium-wardley.html)** - Interactive presentation (248 KB, all assets embedded)
 - **[PDF Deck](deck/ddd-belgium-wardley.pdf)** - Printable version (4.9 MB)
+- **[Handout](handout/ddd-belgium-wardley-handout.pdf)** - 10 A4 pages: worksheets for the exercises and a short reference
+- **[Miro board](https://miro.com/app/board/uXjVEcI-7Zo=/)** - The board we map on during the workshop
 - **[Exercises](exercises/)** - Six progressive group exercises
 - **[Resources](resources.md)** - Books, tools, articles, community
 
