@@ -1,0 +1,32 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Organisation" [0.95, 0.25]
+component "Knowledge compounds" [0.85, 0.25]
+"Organisation" -> "Knowledge compounds"
+anchor "Curator" [0.95, 0.50]
+component "Keep it current" [0.85, 0.50]
+"Curator" -> "Keep it current"
+anchor "Reader / Learner" [0.95, 0.75]
+component "Find what I need" [0.85, 0.75]
+"Reader / Learner" -> "Find what I need"
+component "Body of Knowledge" [0.62, 0.38]
+"Knowledge compounds" -> "Body of Knowledge"
+"Find what I need" -> "Body of Knowledge"
+
+%% not-need "Feedback loops"
+%% not-need "Body of Knowledge"
+%% allow-crossing "Stewardship"
+%% Knowledge architecture = taxonomy, ontology, choreography (see ka-arch).
+%% Platform = search / LLM, content platform, tagging, access, notifications (commodity).
+%% The hub needs classification, its architecture and the platform directly; keeping current is
+%% stewardship; the steward looks after the architecture.
+%% direct-need "Body of Knowledge" "Classification"
+%% direct-need "Body of Knowledge" "Knowledge architecture"
+%% direct-need "Body of Knowledge" "Platform"
+%% direct-need "Keep it current" "Stewardship"
+%% direct-need "Stewardship" "Knowledge architecture"
+%% Knowledge architecture is a submap; its own dependencies are on ka-arch.
+%% leaf "Knowledge architecture"
+%% partial
+

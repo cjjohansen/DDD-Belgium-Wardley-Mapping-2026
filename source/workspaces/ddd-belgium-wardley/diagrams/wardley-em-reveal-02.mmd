@@ -1,0 +1,26 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Organisation" [0.94, 0.34]
+anchor "Software Architect" [0.94, 0.50]
+component "Legacy modernisation" [0.67, 0.24]
+"Organisation" -> "Legacy modernisation"
+"Software Architect" -> "Legacy modernisation"
+
+%% Conversational AI event modelling is a hub: links leave it in every direction.
+%% allow-crossing "Conversational AI event modelling"
+%% label-size 15
+%% label-side "Conversational AI event modelling" above
+%% label-side "Model-driven development" above
+%% label-side "Event model schema" below
+%% Event model tooling and model-driven development sit under links from the hub and the users.
+%% allow-crossing "Event model tooling"
+%% allow-crossing "Model-driven development"
+%% Code following a standard sits between the users and the hub: links cross it from both sides.
+%% allow-crossing "Code following a standard"
+%% Fig. 5: conversational modelling needs the schema directly, not only through the tooling.
+%% direct-need "Conversational AI event modelling" "Event model schema"
+%% The schema is the standard itself; nothing below it on this map.
+%% leaf "Event model schema"
+%% partial
+

@@ -1,0 +1,61 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Architect" [0.95, 0.12]
+anchor "Developer" [0.95, 0.36]
+anchor "Business" [0.95, 0.66]
+component "Code follows target architecture" [0.85, 0.12]
+component "Feedback and better code" [0.79, 0.36]
+component "New features reach customers sooner" [0.85, 0.66]
+"Architect" -> "Code follows target architecture"
+"Developer" -> "Feedback and better code"
+"Business" -> "New features reach customers sooner"
+%% label-side "Code follows target architecture" right
+%% label-side "Feedback and better code" right
+%% label-side "New features reach customers sooner" right
+component "Code changes" [0.66, 0.76]
+component "AI coding agent" [0.56, 0.80]
+component "Code review process" [0.66, 0.36] (inertia)
+evolve "Code review process" 0.52
+component "Reviewers" [0.50, 0.30]
+component "Ensemble work" [0.58, 0.18]
+component "Architectural intent" [0.50, 0.44]
+evolve "Architectural intent" 0.72
+component "Architecture decisions" [0.36, 0.26]
+component "Domain knowledge" [0.24, 0.22]
+"Feedback and better code" -> "Code review process"
+"New features reach customers sooner" -> "Code review process"
+"New features reach customers sooner" -> "Code changes"
+"New features reach customers sooner" -> "Ensemble work"
+"Code follows target architecture" -> "Code review process"
+"Code follows target architecture" -> "Architectural intent"
+"Code changes" -> "AI coding agent"
+"AI coding agent" -> "Architectural intent"
+"Code review process" -> "Reviewers"
+"Reviewers" -> "Domain knowledge"
+"Ensemble work" -> "Domain knowledge"
+"Architectural intent" -> "Architecture decisions"
+"Architecture decisions" -> "Domain knowledge"
+%% label-side "Code review process" left
+%% label-side "Reviewers" left
+%% label-side "Domain knowledge" left
+%% label-side "Ensemble work" left
+%% label-side "AI coding agent" left
+%% label-side "Architecture decisions" left
+%% label-side "Architectural intent" right
+%% constraint "Architecture decisions"
+%% allow-crossing "Code review process"
+note "Exploit: small pull requests, review before starting new work" [0.14, 0.04]
+note "Elevate: build it together, and turn the architecture rules into automated checks" [0.08, 0.04]
+note "The constraint moves to architecture decisions: the architect cannot decide fast enough" [0.02, 0.04]
+
+%% Domain knowledge is tacit, in people's heads; architectural intent is the architect's own judgement. Nothing below them on this map.
+%% leaf "Domain knowledge"
+%% leaf "Architectural intent"
+%% Governance practice (boards, approvals) and the experience model are where these maps stop.
+%% leaf "Governance practice"
+%% leaf "Experience model"
+%% The intent reaches the governance model directly: the rules as code enforce the intent.
+%% direct-need "Architectural intent" "Governance model"
+%% partial
+

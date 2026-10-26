@@ -1,0 +1,26 @@
+wardley-beta
+size [1280, 720]
+
+%% Wardley's figure draws no user; the components B, C and D sit at the top. We add none.
+component "The platform (A)" [0.30, 0.86]
+component "B, built on the platform" [0.50, 0.40]
+component "C, built on the platform" [0.60, 0.30]
+component "D, the newest idea" [0.72, 0.18]
+
+"D, the newest idea" -> "The platform (A)"
+"C, built on the platform" -> "The platform (A)"
+"B, built on the platform" -> "The platform (A)"
+
+%% past "The platform (A)" 0.12 "A1, where it started"
+evolve "D, the newest idea" 0.62
+%% label-side "The platform (A)" right
+%% label-side "D, the newest idea" left
+%% label-side "C, built on the platform" left
+%% label-side "B, built on the platform" left
+%% leaf "The platform (A)"
+%% comment "Innovate: others build new things | on top of your platform" "D, the newest idea"
+%% comment "Commoditise yourself: A moved from | genesis to a utility, and that is | what made B, C and D possible" "The platform (A)"
+%% comment "Leverage: watch what spreads | on the platform and industrialise | it next" "C, built on the platform"
+note "Simon Wardley's Innovate, Leverage, Commoditise map (CC BY-SA), as shown in Gregor Hohpe, Platform Strategy, p. 71" [0.03, 0.04]
+%% Wardley's own figure (Exploring the map, 2016, CC BY-SA 4.0), reproduced by Hohpe in chapter 6,
+%% Mapping Platforms. Redrawn in our notation: the past ring is A1, the component is A3 today.

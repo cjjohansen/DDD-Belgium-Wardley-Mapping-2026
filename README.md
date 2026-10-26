@@ -21,6 +21,7 @@ Wardley mapping, one click at a time.
 - **[Miro board](https://miro.com/app/board/uXjVEcI-7Zo=/)** - The board we map on during the workshop
 - **[Exercises](exercises/)** - Five group exercises on one scenario
 - **[Resources](resources.md)** - Books, tools, articles, community
+- **[Sources](source/)** - Deck source, map sources, theme, build scripts and research notes (CC BY-SA 4.0)
 
 ## What You'll Learn
 

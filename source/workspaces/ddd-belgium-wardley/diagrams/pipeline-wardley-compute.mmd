@@ -1,0 +1,25 @@
+wardley-beta
+size [1280, 720]
+
+anchor "User" [0.95, 0.66]
+component "Application" [0.84, 0.57]
+component "Architectural practice" [0.50, 0.67]
+component "Compute" [0.18, 0.71]
+
+pipeline Compute {
+component "Server" [0.64]
+component "Cloud" [0.78]
+}
+
+"User" -> "Application"
+"Application" -> "Architectural practice"
+"Architectural practice" -> "Compute"
+
+note "After Simon Wardley, Map evolution not maturity, 2024" [0.04, 0.06]
+%% comment "Wardley drew this in 2006, the year cloud | launched. Cloud was brand new, yet it sits | to the right of the server: it was already | compute as a utility. New is not the same as left" "Cloud"
+%% comment "The map is drawn from the point of view of | a team building an application. For them, | compute is something to use, so server or | cloud is a choice of supplier" "Application"
+%% Redrawn after Wardley's figure in "Map evolution not maturity" (2024):
+%% https://medium.com/mappingpractice/map-evolution-not-maturity-bae6ea1a2743
+%% Cloud is newer than the server, yet sits to the right: it is compute as a utility,
+%% the industrialised form of an old activity. The red arrow is where people move.
+%% pipeline-arrow "Server" "Cloud"

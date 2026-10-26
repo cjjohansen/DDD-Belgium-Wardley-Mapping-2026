@@ -1,0 +1,25 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Product team" [0.94, 0.62]
+component "Shared language" [0.80, 0.34]
+"Product team" -> "Shared language"
+component "Bounded contexts" [0.66, 0.28]
+"Shared language" -> "Bounded contexts"
+component "Event Storming" [0.52, 0.46]
+"Bounded contexts" -> "Event Storming"
+component "Facilitation" [0.38, 0.22] (inertia)
+"Event Storming" -> "Facilitation"
+component "Domain experts" [0.30, 0.40]
+"Event Storming" -> "Domain experts"
+component "Online whiteboard" [0.24, 0.74] (buy)
+"Event Storming" -> "Online whiteboard"
+
+%% Event Storming is a hub: links leave it in every direction, so any label side is crossed.
+%% allow-crossing "Event Storming"
+%% Domain experts, facilitation and the whiteboard are where this map stops.
+%% leaf "Domain experts"
+%% leaf "Facilitation"
+%% leaf "Online whiteboard"
+%% partial
+

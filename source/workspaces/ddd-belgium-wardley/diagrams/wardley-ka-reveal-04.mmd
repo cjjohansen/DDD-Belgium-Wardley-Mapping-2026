@@ -1,0 +1,49 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Organisation" [0.95, 0.40]
+component "Knowledge compounds" [0.85, 0.40]
+"Organisation" -> "Knowledge compounds"
+component "Body of Knowledge" [0.50, 0.38]
+"Knowledge compounds" -> "Body of Knowledge"
+anchor "SME / Contributor" [0.95, 0.20]
+anchor "Reader / Learner" [0.95, 0.80]
+anchor "Curator" [0.95, 0.60]
+component "Capture easily" [0.85, 0.20]
+component "Find what I need" [0.85, 0.80]
+component "Keep it current" [0.85, 0.60]
+"SME / Contributor" -> "Capture easily"
+"Reader / Learner" -> "Find what I need"
+"Curator" -> "Keep it current"
+
+%% Body of Knowledge, Stewardship and Discovery are hubs: links converge on them, so crossings are accepted.
+%% allow-crossing "Body of Knowledge"
+%% allow-crossing "Stewardship"
+%% allow-crossing "Discovery"
+%% Feedback loops is a practice the needs depend on, not a need itself.
+%% not-need "Feedback loops"
+%% Users and needs are spread evenly along the top for readability; their x carries no meaning.
+%% Stage reasoning: capture practice = genesis; discovery, feedback loops, body of knowledge
+%% and stewardship (in this org) = custom-built; classification at the custom/product boundary;
+%% search / LLM = product; tagging, access, notifications and content platform = commodity.
+%% Taxonomy (structure), ontology (meaning) and choreography (behaviour) are placed by
+%% practice maturity: taxonomy is the oldest discipline, choreography the least established.
+%% Open question: stewardship as a market practice may be ~product; if so the move is
+%% adopting it (inertia), not evolving it.
+%% Direct needs that other paths also reach: the hub needs classification itself; discovery uses
+%% classification, meaning and access control directly; keeping current is stewardship; feedback
+%% feeds curation; capture classifies as it writes; the need is the body of knowledge; the steward
+%% looks after both vocabularies.
+%% direct-need "Body of Knowledge" "Classification"
+%% direct-need "Discovery" "Classification"
+%% direct-need "Discovery" "Ontology"
+%% direct-need "Discovery" "Access enforcement"
+%% direct-need "Keep it current" "Stewardship"
+%% direct-need "Feedback loops" "Stewardship"
+%% direct-need "Knowledge capture" "Classification"
+%% direct-need "Knowledge compounds" "Body of Knowledge"
+%% direct-need "Stewardship" "Taxonomy"
+%% Taxonomy is the oldest discipline; the map stops there.
+%% leaf "Taxonomy"
+%% partial
+

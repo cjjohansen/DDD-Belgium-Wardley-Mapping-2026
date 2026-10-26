@@ -1,0 +1,18 @@
+wardley-beta
+size [1280, 720]
+
+component "Knowledge architecture" [0.92, 0.32]
+%% submap "Knowledge architecture"
+component "Choreography" [0.74, 0.20]
+"Knowledge architecture" -> "Choreography"
+component "Ontology" [0.58, 0.34]
+"Choreography" -> "Ontology"
+
+%% Choreography = behaviour, ontology = meaning, taxonomy = structure.
+%% Behaviour notations: event models, BPMN (event modelling itself lives on the EM map).
+%% Semantic standards: SKOS, OWL.
+%% Meaning needs the standards and the steward directly, not only through structure.
+%% direct-need "Ontology" "Semantic standards"
+%% direct-need "Ontology" "Stewardship"
+%% partial
+

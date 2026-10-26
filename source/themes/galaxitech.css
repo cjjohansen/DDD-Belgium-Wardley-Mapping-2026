@@ -1,0 +1,264 @@
+/*!
+ * @theme galaxitech
+ * @author GalaxiTech
+ * @size 16:9 1280px 720px
+ *
+ * GalaxiTech Next for Marp: near-black void, deep-blue panels, gold star and
+ * indicators, lit "switch" buttons. Fonts: GalaxiTech Display (hero line,
+ * capitals only), Sora (everything else), JetBrains Mono (labels, code).
+ *
+ * Slide classes:  title · divider · split · statement · code · component · end
+ * Conventions:    ### before # = eyebrow label with gold dot
+ *                 <mark>…</mark> = gold highlight (one phrase per slide)
+ */
+
+/* GalaxiTech Display in nine weights (built by scripts/build-display-fonts.mjs). Capitals only. */
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-Thin.woff2") format("woff2"); font-weight: 100; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-ExtraLight.woff2") format("woff2"); font-weight: 200; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-Light.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-Regular.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-Medium.woff2") format("woff2"); font-weight: 500; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-SemiBold.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "GalaxiTech Display"; src: url("assets/fonts/GalaxiTechDisplay-Black.woff2") format("woff2"); font-weight: 900; }
+@font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-300-normal.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+
+section {
+  /* tokens (same names and values as the GalaxiTech Next design system) */
+  --void: #05070c; --deep-900: #0a1122; --deep-800: #0f1a2e; --deep-700: #16233d;
+  --blue-fill: #0c1834; --blue-edge: #4a67a8; --blue-glow: #1d3f86;
+  --line: #1f2c47; --line-strong: #56678a;
+  --ink: #e6e8ee; --ink-muted: #9aa3b5; --ink-subtle: #7f889c;
+  --gold: #eebd2b; --gold-deep: #d99e26;
+  --red: #ff2436; --red-fill: #e01a2c; /* white on red is 3.8:1, so the red button fills with red-fill (4.8:1) */
+  --sand: #d6c9ab;
+  --danger: #ff5c68; --star-white: #e6e8ee;
+  --radius-control: 8px; --radius-card: 12px;
+  /* buttons are filled with a quiet halo: a 1px top highlight, a soft wide glow and a small drop shadow.
+     (The earlier dark-core, neon-border switch read as retro.) */
+  --glow-gold: inset 0 1px 0 rgba(255,255,255,.35), 0 0 20px rgba(238,189,43,.16), 0 0 60px rgba(238,189,43,.06), 0 1px 2px rgba(0,0,0,.4);
+  --glow-red: inset 0 1px 0 rgba(255,255,255,.25), 0 0 20px rgba(255,36,54,.18), 0 0 60px rgba(255,36,54,.07), 0 1px 2px rgba(0,0,0,.4);
+  --glow-sand: inset 0 1px 0 rgba(255,255,255,.35), 0 0 20px rgba(214,201,171,.12), 0 0 60px rgba(214,201,171,.05), 0 1px 2px rgba(0,0,0,.4);
+  --glow-dot: 0 0 8px rgba(238,189,43,.9), 0 0 18px rgba(238,189,43,.45);
+  --font-brand: "GalaxiTech Display", sans-serif;
+  --font-sans: "Sora", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  width: 1280px; height: 720px; box-sizing: border-box;
+  /* layout grid: every vertical position is a multiple of 8px.
+     Content slides are top-anchored, so the eyebrow sits at --margin-top and the title at --title-top on
+     every slide, whatever follows them. Hero classes (title, divider, statement, end) opt back into centering.
+     The header block (eyebrow + title) is kept compact so the body gets most of the slide: body starts at 176. */
+  --grid: 8px;
+  --margin: calc(var(--grid) * 12);              /* 96 = DS space-24: left and right */
+  --margin-top: calc(var(--grid) * 8);           /* 64 = DS space-16 */
+  --margin-bottom: calc(var(--grid) * 10);       /* 80: clear of the footer (footer and page number sit 40 from the edge) */
+  --eyebrow-size: 16px; --eyebrow-line: calc(var(--grid) * 3);  /* 24 line box */
+  --eyebrow-gap: var(--grid);                    /* 8 = DS space-2 */
+  --title-size: 44px; --title-line: calc(var(--grid) * 7);      /* 56 line box */
+  --title-gap: calc(var(--grid) * 3);            /* 24 = DS space-6 (eyebrow+heading block to content) */
+  --title-top: calc(var(--margin-top) + var(--eyebrow-line) + var(--eyebrow-gap)); /* 96 */
+  --chrome-inset: calc(var(--grid) * 5);         /* 40: header, footer, page number */
+  /* 12-column grid inside the side margins: 12 columns + 11 gutters = 1088 */
+  --columns: 12;
+  --gutter: calc(var(--grid) * 4);               /* 32 = DS space-8 */
+  --column: calc((1280px - 2 * var(--margin) - 11 * var(--gutter)) / 12); /* 61.33 */
+  padding: var(--margin-top) var(--margin) var(--margin-bottom);
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 92% 0%, rgba(29,63,134,.28), transparent 70%),
+    var(--void);
+  color: var(--ink);
+  font-family: var(--font-sans); font-weight: 400; font-size: 26px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* ---------- type ---------- */
+/* never squeeze content to fit: overflow must show as overflow (scripts/validate.mjs reports it) */
+section > *, section > .text > * { flex-shrink: 0; }
+/* # and ## are both the slide title: one size on every content slide */
+h1, h2 { font-weight: 300; font-size: var(--title-size); line-height: var(--title-line); letter-spacing: -0.01em; margin: 0 0 var(--title-gap); color: var(--ink); }
+h3 { /* eyebrow */
+  display: inline-flex; align-items: center; gap: 12px; align-self: flex-start;
+  font-family: var(--font-mono); font-weight: 400; font-size: var(--eyebrow-size); line-height: var(--eyebrow-line); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink); margin: 0 0 var(--eyebrow-gap);
+}
+h3::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: var(--glow-dot); }
+h4 { font-weight: 600; font-size: 28px; margin: 0 0 8px; color: var(--ink); }
+p { margin: 0 0 18px; }
+/* no lone words on a last line: balance short display text, "pretty" for running text */
+h1, h2, blockquote p, section.statement p, section.title p { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+p.lead, section > p:first-of-type:is(h1 + p):not(:has(> img)) { color: var(--ink-muted); font-weight: 300; font-size: 30px; line-height: 1.45; max-width: 26em; }
+strong { font-weight: 600; color: var(--ink); }
+em { color: var(--ink-muted); }
+mark { background: none; color: var(--gold); }
+a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(238,189,43,.7); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+
+ul, ol { margin: 0 0 18px; padding-left: 1.1em; }
+li { margin: 0 0 10px; padding-left: .2em; }
+/* bullets are the GalaxiTech star (gold; white when nested). ::marker can't hold an image, hence ::before */
+ul { list-style: none; padding-left: 1.3em; }
+ul > li { position: relative; }
+ul > li::before { content: ""; position: absolute; left: -1.3em; top: .32em; width: .9em; height: .9em; background: url("assets/star.svg") center / contain no-repeat; }
+li > ul > li::before { background-image: url("assets/star-white.svg"); }
+ol > li::marker { font-family: var(--font-mono); color: var(--gold); font-size: .8em; }
+li > ul, li > ol { margin-top: 8px; font-size: .88em; color: var(--ink-muted); }
+
+blockquote { margin: 0; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+blockquote p { font-weight: 300; font-size: 40px; line-height: 1.3; margin: 0; }
+blockquote p::before { content: "“"; color: var(--gold); margin-right: .15em; }
+blockquote + p, blockquote cite { font-family: var(--font-mono); font-size: 16px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-subtle); margin-top: 18px; }
+
+table { border-collapse: collapse; font-size: 22px; width: 100%; }
+th { font-family: var(--font-mono); font-weight: 400; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-subtle); text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--line-strong); }
+td { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+
+img { border-radius: var(--radius-card); max-width: 100%; box-sizing: border-box; }
+img.frame, p > img { border: 1px solid var(--line); }
+/* an image alone in a paragraph is a figure: no line-box gap below it, so a diagram sized to the body area fits exactly */
+p > img:only-child { display: block; }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
+
+/* ---------- code ---------- */
+code { font-family: var(--font-mono); font-size: .8em; background: var(--deep-800); border: 1px solid var(--line); border-radius: 6px; padding: .1em .4em; }
+pre { margin: 0 0 calc(var(--grid) * 3); background: var(--deep-900); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 26px 30px; overflow: hidden; position: relative; }
+pre code { background: none; border: 0; padding: 0; font-size: 20px; line-height: 1.6; color: var(--ink); display: block; }
+pre[data-lang]::before, pre:has(code[class*="language-"])::before { font-family: var(--font-mono); position: absolute; top: 12px; right: 18px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-subtle); }
+pre:has(code.language-csharp)::before { content: "C#"; } pre:has(code.language-ts)::before, pre:has(code.language-typescript)::before { content: "TypeScript"; }
+pre:has(code.language-tsx)::before { content: "TSX"; } pre:has(code.language-jsx)::before { content: "JSX"; } pre:has(code.language-js)::before { content: "JavaScript"; }
+pre:has(code.language-vue)::before { content: "Vue"; } pre:has(code.language-html)::before { content: "HTML"; } pre:has(code.language-json)::before { content: "JSON"; }
+pre:has(code.language-bash)::before, pre:has(code.language-sh)::before { content: "Shell"; } pre:has(code.language-sql)::before { content: "SQL"; } pre:has(code.language-yaml)::before { content: "YAML"; }
+.hljs-keyword, .hljs-built_in, .hljs-literal, .hljs-selector-tag, .hljs-meta .hljs-keyword { color: #8ea7d9; }
+.hljs-title, .hljs-title.class_, .hljs-type, .hljs-class .hljs-title, .hljs-tag .hljs-name, .hljs-name { color: var(--gold); }
+.hljs-string, .hljs-attr, .hljs-attribute, .hljs-number, .hljs-regexp, .hljs-template-variable { color: var(--sand); }
+.hljs-comment, .hljs-quote, .hljs-meta { color: var(--ink-subtle); font-style: italic; }
+.hljs-variable, .hljs-params, .hljs-property { color: var(--ink); }
+.hljs-deletion { color: var(--danger); } .hljs-addition { color: #9fd3a8; }
+/* highlight lines: wrap in <mark> inside an HTML <pre> or use the .hl class on a span */
+pre mark, pre .hl { display: inline-block; width: calc(100% + 60px); margin: 0 -30px; padding: 0 30px; background: rgba(238,189,43,.1); box-shadow: inset 3px 0 0 var(--gold); color: inherit; }
+
+/* ---------- header / footer / page number ---------- */
+header, footer { font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-subtle); }
+header { position: absolute; top: var(--chrome-inset); left: var(--margin); right: var(--margin); margin: 0; }
+footer { position: absolute; bottom: var(--chrome-inset); left: var(--margin); margin: 0; display: flex; align-items: center; gap: 10px; }
+footer::before { content: ""; flex: none; width: var(--eyebrow-line); height: var(--eyebrow-line); background: url("assets/star.svg") center/contain no-repeat; }
+section::after { /* page number */
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; color: var(--gold);
+  right: var(--margin); bottom: var(--chrome-inset); top: auto; padding: 0; line-height: 1; position: absolute; content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+}
+
+/* ---------- layout helpers ---------- */
+/* .cols lays its children on the 12-column grid. Presets: (default) 6+6 · wide-left 7+5 · wide-right 5+7 ·
+   three 4+4+4 · four 3+3+3+3. Any child can override with .span-1 … .span-12 */
+.cols { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--gutter); align-items: stretch; margin-bottom: var(--gutter); } /* boxes in a row share a height */
+.cols > * { grid-column: span 6; margin-bottom: 0; }
+.cols.wide-left > :nth-child(odd), .cols.wide-right > :nth-child(even) { grid-column: span 7; }
+.cols.wide-left > :nth-child(even), .cols.wide-right > :nth-child(odd) { grid-column: span 5; }
+.cols.three > * { grid-column: span 4; }
+.cols.four > * { grid-column: span 3; }
+.cols > .span-1 { grid-column: span 1; } .cols > .span-2 { grid-column: span 2; } .cols > .span-3 { grid-column: span 3; }
+.cols > .span-4 { grid-column: span 4; } .cols > .span-5 { grid-column: span 5; } .cols > .span-6 { grid-column: span 6; }
+.cols > .span-7 { grid-column: span 7; } .cols > .span-8 { grid-column: span 8; } .cols > .span-9 { grid-column: span 9; }
+.cols > .span-10 { grid-column: span 10; } .cols > .span-11 { grid-column: span 11; } .cols > .span-12 { grid-column: span 12; }
+/* authoring aid: add show-grid to a slide's class to draw the 12 columns */
+section.show-grid::before { content: ""; position: absolute; top: 0; bottom: 0; left: var(--margin); right: var(--margin); pointer-events: none; background: linear-gradient(to right, rgba(238,189,43,.12) var(--column), transparent var(--column)) 0 0 / calc(var(--column) + var(--gutter)) 100% repeat-x; }
+.panel { background: var(--deep-800); border: 1px solid var(--line); border-radius: var(--radius-card); padding: calc(var(--grid) * 3); } /* 24 = DS space-6, card padding */
+.panel h4 { margin-top: 0; }
+.label { font-family: var(--font-mono); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-subtle); }
+.gold { color: var(--gold); } .muted { color: var(--ink-muted); } .small { font-size: .8em; }
+.stat { font-family: var(--font-mono); font-size: 72px; line-height: 1; color: var(--ink); letter-spacing: -.02em; }
+
+/* static buttons (render in PDF too) */
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 28px; border-radius: var(--radius-control); font-size: 20px; font-weight: 600; border: 1px solid transparent; color: #fff; text-decoration: none; }
+/* flat filled buttons: dark text on gold and sand (white fails contrast there), white on red */
+.btn.gold { background: var(--gold); color: var(--void); box-shadow: var(--glow-gold); }
+.btn.red { background: var(--red-fill); color: #fff; box-shadow: var(--glow-red); }
+.btn.sand { background: var(--sand); color: var(--void); box-shadow: var(--glow-sand); }
+/* the secondary action stays an outline, without glow */
+.btn.blue { background: var(--blue-fill); border-color: var(--blue-edge); color: var(--ink); }
+
+/* embedded HTML / React islands */
+.gx-island { font-size: 17px; line-height: 1.6; }
+.stage .gx-island, .stage > .gx-island { zoom: 1.4; }
+.stage { background: var(--deep-900); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; min-height: 160px; margin: 0 0 calc(var(--grid) * 3); }
+iframe.embed { width: 100%; height: 420px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--deep-900); }
+
+/* ---------- slide classes ---------- */
+section.title {
+  justify-content: flex-end;
+  background:
+    radial-gradient(ellipse 70% 90% at 80% 10%, rgba(29,63,134,.45), transparent 70%),
+    linear-gradient(180deg, rgba(5,7,12,.3), rgba(5,7,12,.82) 62%, var(--void)),
+    url("assets/space-station.webp") center / cover;
+}
+section.title h1 { font-family: var(--font-brand); font-weight: 100; text-transform: uppercase; font-size: 84px; line-height: 1.02; letter-spacing: .06em; margin-bottom: 20px; }
+section.title p { color: #c3c8d3; font-weight: 300; font-size: 30px; }
+section.title::after, section.end::after { display: none; }
+section.title .brand, section.end .brand { position: absolute; top: var(--chrome-inset); left: var(--margin); display: flex; align-items: center; gap: 12px; font-family: var(--font-brand); font-size: 26px; letter-spacing: .05em; background: linear-gradient(135deg, var(--gold), var(--gold-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+section.title .brand img, section.end .brand img { width: 34px; height: 34px; border: 0; border-radius: 0; }
+
+section.divider { justify-content: center; background: radial-gradient(ellipse 50% 70% at 100% 50%, rgba(29,63,134,.35), transparent 70%), var(--deep-900); }
+section.divider h2 { font-size: 64px; font-weight: 300; }
+section.divider h6 { font-family: var(--font-mono); font-weight: 400; font-size: 120px; line-height: 1; color: var(--gold); margin: 0 0 24px; letter-spacing: -.02em; }
+
+section.statement { justify-content: center; }
+section.statement h1, section.statement p { font-size: 60px; font-weight: 300; line-height: 1.2; max-width: 18em; }
+
+section.code pre code { font-size: 22px; }
+
+section.component .stage { min-height: calc(var(--grid) * 24); }
+
+section.split { padding: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 720px; }
+/* split = text on columns 1–6, full-bleed media from the middle of the 6/7 gutter to the edge */
+section.split > .text { padding: var(--margin-top) calc(var(--gutter) / 2) var(--margin-bottom) var(--margin); display: flex; flex-direction: column; justify-content: flex-start; }
+section.split > .media { height: 720px; overflow: hidden; background: var(--void); border-left: 1px solid var(--line); display: flex; align-items: center; }
+section.split > .media > p { width: 100%; height: 100%; margin: 0; }
+section.split > .media img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; border: 0; }
+section.split > .media.contain img { object-fit: contain; }
+/* photos are cropped to fill (cover); keep the important side with left / right / top / bottom */
+section.split > .media.left img { object-position: left center; } section.split > .media.right img { object-position: right center; }
+section.split > .media.top img { object-position: center top; } section.split > .media.bottom img { object-position: center bottom; }
+section.split footer { left: var(--margin); }
+/* split reverse = the mirror image: full-bleed media on the left half, text on columns 7–12 */
+section.split.reverse > .media { order: -1; border-left: 0; border-right: 1px solid var(--line); }
+section.split.reverse > .text { padding: var(--margin-top) var(--margin) var(--margin-bottom) calc(var(--gutter) / 2); }
+section.split.reverse footer { left: calc(50% + var(--gutter) / 2); }
+section.split::after { color: var(--gold); right: 24px; background: rgba(5,7,12,.85); padding: 6px 10px; border-radius: 6px; bottom: 26px; }
+
+section.end { justify-content: center; align-items: flex-start; background: radial-gradient(ellipse 60% 80% at 85% 20%, rgba(29,63,134,.45), transparent 70%), var(--void); }
+
+/* map: a diagram (Wardley map, context map, …) fills the whole slide, 1280 × 720. Chrome is minimal: an optional
+   ### label as a small chip top-left, a small star bottom-left, a small page number bottom-right; no footer text. */
+section.map { padding: 0; display: block; background: var(--deep-900); }
+section.map > p:has(> img:only-child) { position: absolute; inset: 0; margin: 0; }
+section.map > p > img:only-child { display: block; width: 1280px; height: 720px; max-width: none; object-fit: contain; border: 0; border-radius: 0; }
+section.map > h3 { position: absolute; z-index: 1; top: calc(var(--grid) * 2); left: calc(var(--grid) * 2); margin: 0; padding: 0 calc(var(--grid) * 1.5);
+  font-size: 13px; line-height: calc(var(--grid) * 4); background: rgba(5,7,12,.82); border: 1px solid var(--line); border-radius: var(--radius-control); }
+section.map footer { display: none; }
+section.map::before { content: ""; position: absolute; z-index: 1; left: calc(var(--grid) * 2); bottom: calc(var(--grid) * 2); width: calc(var(--grid) * 2); height: calc(var(--grid) * 2); background: url("assets/star.svg") center / contain no-repeat; }
+section.map::after { z-index: 1; right: calc(var(--grid) * 2); bottom: calc(var(--grid) * 2); font-size: 11px; padding: 4px 8px; border-radius: 6px; background: rgba(5,7,12,.82); }
+section.end h1 { font-family: var(--font-brand); font-weight: 100; text-transform: uppercase; font-size: 72px; line-height: 1.1; letter-spacing: .06em; }
+.cols pre code { font-size: 16px; }
+
+/* ---------- exercise: sand background, so the group work slides stand out ---------- */
+/* the tokens flip to dark ink; gold on sand is too faint, so marks and stars go dark */
+section.exercise {
+  --ink: #05070c; --ink-muted: #2f3442; --ink-subtle: #4a4f5c; --line: #b9ab8a; --line-strong: #8c7f62;
+  background: var(--sand);
+}
+section.exercise mark { color: var(--void); font-weight: 600; background: rgba(238,189,43,.55); padding: 0 .15em; border-radius: 4px; }
+section.exercise ul > li::before, section.exercise footer::before { filter: brightness(.45); }
+section.exercise h3::before { background: var(--void); box-shadow: none; }
+section.exercise::after { color: var(--void); }
+section.map.exercise { background: var(--sand); }
+section.map.exercise > h3, section.map.exercise::after { background: rgba(214,201,171,.92); }
+
+/* map inset: the image leaves the top 56px free, so the label chip does not sit on the picture's own heading */
+section.map.inset > p > img:only-child { padding-top: 56px; box-sizing: border-box; }

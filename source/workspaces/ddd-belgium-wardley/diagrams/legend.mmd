@@ -1,0 +1,34 @@
+wardley-beta
+size [1280, 720]
+
+anchor "the user" [0.93, 0.35]
+component "a user need" [0.83, 0.35]
+component "a component" [0.73, 0.35]
+component "the bottleneck" [0.63, 0.35]
+component "market evolution" [0.53, 0.35]
+component "inertia" [0.43, 0.35] (inertia)
+component "we advance it" [0.33, 0.35]
+component "we hold it back" [0.23, 0.35]
+component "has its own map" [0.12, 0.35]
+
+"the user" -> "a user need"
+"a user need" -> "a component"
+evolve "market evolution" 0.72
+evolve "inertia" 0.72
+
+accelerator "advance" [0.33, 0.55]
+deaccelerator "hold" [0.23, 0.55]
+%% constraint "the bottleneck"
+%% submap "has its own map"
+%% The marks of the house style, one of each, in a plain column (CJ's notes, 10 Oct): a plain
+%% component, market evolution before inertia, "we advance it", and a square for a submap.
+%% Sourcing marks (rent/make) and the pipeline are in the full legend in the appendix.
+%% Inertia sits on its evolution path, blocking the move.
+%% arrow-span 0.36 0.72
+note "On the component: its state now" [0.13, 0.52]
+note "On the evolution line: forces on its move" [0.07, 0.52]
+%% force-caption-off
+%% hide-x-axis
+%% hide-y-axis
+%% a legend, not a map: the components are notation samples
+%% no-graph-check

@@ -1,0 +1,41 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Business" [0.95, 0.50]
+component "New features reach customers sooner" [0.85, 0.50]
+"Business" -> "New features reach customers sooner"
+%% label-side "New features reach customers sooner" right
+component "Code changes" [0.66, 0.76]
+component "AI coding agent" [0.56, 0.80]
+component "Architectural intent" [0.50, 0.60]
+component "Architecture decisions" [0.36, 0.26]
+component "Governance practice" [0.22, 0.18]
+component "Governance model" [0.22, 0.78]
+component "Delivery platform" [0.30, 0.86]
+"New features reach customers sooner" -> "Code changes"
+"New features reach customers sooner" -> "Delivery platform"
+"Code changes" -> "AI coding agent"
+"AI coding agent" -> "Architectural intent"
+"Architectural intent" -> "Architecture decisions"
+"Architecture decisions" -> "Governance practice"
+"Architectural intent" -> "Governance model"
+%% constraint "Architecture decisions"
+%% submap "Delivery platform"
+%% label-side "Architecture decisions" left
+%% label-side "Governance practice" left
+%% label-side "AI coding agent" left
+%% label-side "Architectural intent" left
+%% comment "Rules as code, fitness functions: | the industrialised part of governance" "Governance model"
+%% comment "Review boards and approvals: | the part that still works like gates" "Governance practice"
+note "Question: how do we make architecture decisions faster without losing alignment?" [0.06, 0.04]
+
+%% Domain knowledge is tacit, in people's heads; architectural intent is the architect's own judgement. Nothing below them on this map.
+%% leaf "Domain knowledge"
+%% leaf "Architectural intent"
+%% Governance practice (boards, approvals) and the experience model are where these maps stop.
+%% leaf "Governance practice"
+%% leaf "Experience model"
+%% The intent reaches the governance model directly: the rules as code enforce the intent.
+%% direct-need "Architectural intent" "Governance model"
+%% partial
+

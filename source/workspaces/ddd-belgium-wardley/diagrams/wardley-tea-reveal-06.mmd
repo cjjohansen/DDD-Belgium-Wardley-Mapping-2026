@@ -1,0 +1,21 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Tea shop" [0.88, 0.42]
+anchor "Customer" [0.88, 0.58]
+component "Cup of tea" [0.75, 0.50]
+"Tea shop" -> "Cup of tea"
+"Customer" -> "Cup of tea"
+component "Cup" [0.56, 0.32]
+"Cup of tea" -> "Cup"
+component "Tea leaves" [0.46, 0.46]
+"Cup of tea" -> "Tea leaves"
+component "Hot water" [0.56, 0.60]
+"Cup of tea" -> "Hot water"
+component "Kettle" [0.42, 0.60]
+"Hot water" -> "Kettle"
+
+%% hide-x-axis
+%% hide-y-axis
+%% partial
+

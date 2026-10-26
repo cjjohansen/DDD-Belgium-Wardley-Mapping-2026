@@ -1,0 +1,67 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Architect" [0.95, 0.16]
+anchor "Developer" [0.95, 0.40]
+anchor "Business" [0.95, 0.64]
+component "Code follows target architecture" [0.85, 0.16]
+component "Feedback and better code" [0.79, 0.40]
+component "New features reach customers sooner" [0.85, 0.64]
+%% label-side "Code follows target architecture" right
+%% label-side "Feedback and better code" right
+%% label-side "New features reach customers sooner" right
+"Architect" -> "Code follows target architecture"
+"Developer" -> "Feedback and better code"
+"Business" -> "New features reach customers sooner"
+component "Product hypothesis" [0.74, 0.46]
+component "Code review process" [0.66, 0.36] (inertia)
+component "Code changes" [0.66, 0.76]
+component "Release pipeline" [0.66, 0.90]
+component "Reviewers" [0.50, 0.30]
+component "Architectural intent" [0.50, 0.44]
+component "AI coding agent" [0.56, 0.80]
+component "Continuous integration" [0.50, 0.92]
+component "Specification" [0.42, 0.56]
+component "Scope and boundaries" [0.34, 0.60]
+component "Domain knowledge" [0.24, 0.22]
+"New features reach customers sooner" -> "Code changes"
+"New features reach customers sooner" -> "Code review process"
+"New features reach customers sooner" -> "Release pipeline"
+"New features reach customers sooner" -> "Product hypothesis"
+"Product hypothesis" -> "Specification"
+"Code follows target architecture" -> "Code review process"
+"Code follows target architecture" -> "Architectural intent"
+"Feedback and better code" -> "Code review process"
+"Code changes" -> "AI coding agent"
+"Release pipeline" -> "Continuous integration"
+"AI coding agent" -> "Architectural intent"
+"AI coding agent" -> "Specification"
+"AI coding agent" -> "Scope and boundaries"
+"Code review process" -> "Reviewers"
+"Reviewers" -> "Domain knowledge"
+"Specification" -> "Domain knowledge"
+"Scope and boundaries" -> "Domain knowledge"
+%% label-side "Code review process" left
+%% label-side "Reviewers" left
+%% label-side "Domain knowledge" left
+%% label-side "Architectural intent" right
+%% label-side "Code changes" left
+%% label-side "AI coding agent" left
+%% label-side "Specification" left
+%% label-side "Scope and boundaries" left
+%% label-side "Continuous integration" left
+evolve "Code review process" 0.52
+component "Ensemble work" [0.58, 0.18]
+"New features reach customers sooner" -> "Ensemble work"
+"Ensemble work" -> "Domain knowledge"
+component "Architecture decisions" [0.36, 0.26]
+"Architectural intent" -> "Architecture decisions"
+"Architecture decisions" -> "Domain knowledge"
+%% label-side "Ensemble work" left
+%% label-side "Architecture decisions" left
+%% constraint "Architecture decisions"
+%% allow-crossing "Code review process"
+
+%% leaf "Domain knowledge"
+%% leaf "Architectural intent"
+

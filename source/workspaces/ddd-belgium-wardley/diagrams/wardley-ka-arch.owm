@@ -1,0 +1,22 @@
+title Knowledge architecture submap
+
+component Knowledge architecture [0.92, 0.32]
+// submap Knowledge architecture
+component Choreography [0.74, 0.20]
+Knowledge architecture->Choreography
+component Ontology [0.58, 0.34]
+Choreography->Ontology
+component Taxonomy [0.42, 0.48]
+Ontology->Taxonomy
+component Stewardship [0.24, 0.22]
+Ontology->Stewardship
+Taxonomy->Stewardship
+// constraint Stewardship
+component Behaviour notations [0.50, 0.64]
+Choreography->Behaviour notations
+component Semantic standards [0.26, 0.72]
+Ontology->Semantic standards
+Taxonomy->Semantic standards
+// Choreography = behaviour, ontology = meaning, taxonomy = structure.
+// Behaviour notations: event models, BPMN (event modelling itself lives on the EM map).
+// Semantic standards: SKOS, OWL.

@@ -1,0 +1,20 @@
+title Capacity planning to autoscaling
+
+anchor Online shop [0.95, 0.40]
+anchor Customer [0.95, 0.60]
+component Fast checkout [0.85, 0.50]
+Online shop->Fast checkout
+Customer->Fast checkout
+component Web shop [0.70, 0.35]
+Fast checkout->Web shop
+component Cloud compute [0.50, 0.86]
+Web shop->Cloud compute
+component Capacity planning [0.34, 0.45] inertia
+Web shop->Capacity planning
+// label-side Capacity planning left
+evolve Capacity planning 0.74
+component Autoscaling [0.34, 0.80]
+Cloud compute->Autoscaling
+note Some teams still plan by hand: inertia [0.24, 0.40]
+note Practices co-evolve with the activity [0.16, 0.40]
+note One way to draw it [0.10, 0.40]
