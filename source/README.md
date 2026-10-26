@@ -47,11 +47,19 @@ and the HTML to `../deck/`.
 `npm run assets` is the only addition to the draft's `package.json`. The images and fonts already live in
 `../deck/assets/`, so they are copied in rather than kept twice.
 
-## Held back
+## Book maps and their sources
 
-Three maps redrawn from all-rights-reserved books are not here: *Enabling Microservice Success* (Sarah Wells)
-and the two from *The Value Flywheel Effect* (David Anderson, Mark McCann, Michael O'Reilly). They wait until
-the authors answer the request for permission. `wardley-sources.md` says so where they would be.
+Three maps come from all-rights-reserved books. Their SVGs are in `../deck/assets/diagrams/`; their `.mmd`
+sources are not in this folder. `wardley-sources.md` names the source under each map.
+
+- `book-enabling-microservice-success.svg`: *Enabling Microservice Success* (Sarah Wells), figure 11-5,
+  shown with the author's permission.
+- `book-value-flywheel-effect.svg`: *The Value Flywheel Effect* (David Anderson, Mark McCann, Michael
+  O'Reilly), the serverless-first map. Redrawn from the figure IT Revolution published with the authors'
+  article *Using Wardley Mapping with the Value Flywheel*:
+  https://itrevolution.com/articles/using-wardley-mapping-with-the-value-flywheel/
+- `book-value-flywheel-conference.svg`: the same authors' conference map, redrawn from their post on
+  The Serverless Edge: https://theserverlessedge.com/wardley-mapping-with-the-value-flywheel/
 
 ## Licence
 
