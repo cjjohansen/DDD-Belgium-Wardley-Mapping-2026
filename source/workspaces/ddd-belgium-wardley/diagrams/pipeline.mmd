@@ -1,0 +1,25 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Your team" [0.90, 0.50]
+component "Compute" [0.55, 0.50]
+
+pipeline Compute {
+component "Hand-built" [0.12]
+component "Managed hosting" [0.40]
+component "IaaS" [0.68]
+component "Serverless" [0.90]
+}
+
+"Your team" -> "Compute"
+
+evolve "Compute" 0.80
+%% comment "Market evolution: the centre of gravity | drifts right on its own" "Compute"
+
+deaccelerator "legacy skills" [0.80, 0.30]
+note "legacy skills hold it back" [0.79, 0.02]
+%% The market pull is natural evolution, so it is the dashed evolve line, not a push arrow (CJ, 13 Oct).
+%% One category, several substitutes in a row: same visibility as the parent, each at its
+%% own evolution stage, evolving on its own clock. Forces sit above the stages, one row each.
+%% arrow-span 0.24 0.46
+%% force-caption-off

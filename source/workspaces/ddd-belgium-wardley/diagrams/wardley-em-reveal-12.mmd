@@ -1,0 +1,56 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Organisation" [0.94, 0.34]
+anchor "Software Architect" [0.94, 0.50]
+component "Legacy modernisation" [0.67, 0.24]
+"Organisation" -> "Legacy modernisation"
+"Software Architect" -> "Legacy modernisation"
+component "Model-driven development" [0.80, 0.55]
+"Software Architect" -> "Model-driven development"
+component "Code following a standard" [0.73, 0.49]
+"Software Architect" -> "Code following a standard"
+component "Conversational AI event modelling" [0.58, 0.17]
+"Legacy modernisation" -> "Conversational AI event modelling"
+"Model-driven development" -> "Conversational AI event modelling"
+"Code following a standard" -> "Conversational AI event modelling"
+component "Event model tooling" [0.47, 0.33]
+"Conversational AI event modelling" -> "Event model tooling"
+component "Event model schema" [0.38, 0.29]
+"Conversational AI event modelling" -> "Event model schema"
+"Event model tooling" -> "Event model schema"
+component "AI" [0.22, 0.77]
+"Conversational AI event modelling" -> "AI"
+%% past "Event model schema" 0.14
+%% past "AI" 0.15
+%% move "Model-driven development" 0.75
+%% move "Code following a standard" 0.78
+%% move "Legacy modernisation" 0.74
+%% move "Conversational AI event modelling" 0.49
+evolve "Event model tooling" 0.48
+evolve "Event model schema" 0.73
+%% future "Event model tooling" "Event model tooling"
+%% future "Event model schema" "Event model schema"
+%% future-link "Conversational AI event modelling" "Event model tooling"
+%% future-link "Event model tooling" "Event model schema"
+%% future-link "Conversational AI event modelling" "AI"
+%% comment "A novelty: room to differentiate | and earn ($$$). It needs to mature | into a product" "Conversational AI event modelling"
+%% comment "AI is industrialised: | a utility now" "AI"
+
+%% Conversational AI event modelling is a hub: links leave it in every direction.
+%% allow-crossing "Conversational AI event modelling"
+%% label-size 15
+%% label-side "Conversational AI event modelling" above
+%% label-side "Model-driven development" above
+%% label-side "Event model schema" below
+%% Event model tooling and model-driven development sit under links from the hub and the users.
+%% allow-crossing "Event model tooling"
+%% allow-crossing "Model-driven development"
+%% Code following a standard sits between the users and the hub: links cross it from both sides.
+%% allow-crossing "Code following a standard"
+%% Fig. 5: conversational modelling needs the schema directly, not only through the tooling.
+%% direct-need "Conversational AI event modelling" "Event model schema"
+%% The schema is the standard itself; nothing below it on this map.
+%% leaf "Event model schema"
+%% partial
+

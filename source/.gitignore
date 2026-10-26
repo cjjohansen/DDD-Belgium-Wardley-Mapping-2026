@@ -1,0 +1,11 @@
+# Dependencies and screenshots
+node_modules/
+.shots/
+
+# Copied in by `npm run assets` (the originals are in ../deck/assets)
+/assets/
+workspaces/*/assets/
+
+# Build output (the published copies are in ../deck)
+workspaces/*/*.html
+workspaces/*/*.pdf

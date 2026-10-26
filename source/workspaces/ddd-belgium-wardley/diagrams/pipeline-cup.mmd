@@ -1,0 +1,20 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Customer" [0.92, 0.62]
+component "Cup of tea" [0.78, 0.62]
+component "Cup" [0.56, 0.62]
+
+pipeline Cup {
+component "Recyclable cup" [0.40]
+component "Porcelain" [0.62]
+component "Disposable plastic" [0.86]
+}
+
+"Customer" -> "Cup of tea"
+"Cup of tea" -> "Cup"
+
+note "One need, three ways to meet it, each at its own stage" [0.30, 0.30]
+%% Pipeline example for the appendix (CJ's notes, 10 Oct): the cup, from porcelain to disposable
+%% plastic to the recyclable cup. Placements are a judgement for discussion: disposable plastic
+%% is a commodity, porcelain a long-mature product, the recyclable cup still evolving.

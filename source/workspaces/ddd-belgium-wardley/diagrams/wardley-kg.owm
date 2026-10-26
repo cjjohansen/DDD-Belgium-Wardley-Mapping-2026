@@ -1,0 +1,31 @@
+title Governed knowledge graph
+
+anchor Employee [1.00, 0.62]
+component Trusted answer to a question [0.86, 0.62]
+Employee->Trusted answer to a question
+component AI assistant [0.65, 0.56]
+Trusted answer to a question->AI assistant
+component Body of knowledge [0.40, 0.45]
+AI assistant->Body of knowledge
+Trusted answer to a question->Body of knowledge
+component Source systems [0.11, 0.81]
+Body of knowledge->Source systems
+// comment The source systems: the CRM, the ERP, | the wiki, the tickets, the file shares Source systems
+component LLM [0.22, 0.80]
+AI assistant->LLM
+component Governance [0.10, 0.66]
+AI assistant->Governance
+component Ontology [0.20, 0.36] inertia
+Body of knowledge->Ontology
+Ontology->Governance
+evolve Ontology 0.60
+// comment Inertia: everyone must agree | the meanings again Ontology
+evolve Body of knowledge 0.62
+// Stage reasoning: AI assistant = a product you rent; body of knowledge = custom built,
+// evolving toward product; ontology = custom, evolving toward a shared vocabulary, with
+// inertia; LLM and source systems = commodity; governance = productised policy tooling.
+// constraint Governance
+// The assistant needs governance directly (what it may answer); the answer is only as good as the body of knowledge.
+// direct-need AI assistant Governance
+// direct-need Trusted answer to a question Body of knowledge
+// allow-crossing AI assistant

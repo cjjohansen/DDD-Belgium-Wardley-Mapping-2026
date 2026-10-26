@@ -1,0 +1,36 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Organisation" [0.95, 0.62]
+component "Build, sell and deliver" [0.85, 0.46]
+component "Be organised" [0.85, 0.78]
+component "Strategy" [0.74, 0.22]
+component "Governance" [0.66, 0.26]
+component "Sell" [0.74, 0.60]
+component "Marketing" [0.66, 0.74]
+component "Product" [0.56, 0.52]
+component "MVP" [0.50, 0.24]
+component "Pilot" [0.44, 0.17]
+component "Service" [0.46, 0.74]
+component "Prototype" [0.36, 0.11]
+component "Proof of concept" [0.28, 0.06]
+component "Experiments" [0.20, 0.14]
+component "Automation" [0.14, 0.76]
+
+"Organisation" -> "Build, sell and deliver"
+"Organisation" -> "Be organised"
+
+%% label-side "Build, sell and deliver" left
+%% label-side "Proof of concept" right
+%% label-side "Experiments" right
+%% label-side "Prototype" right
+%% label-side "Pilot" right
+%% label-side "MVP" right
+%% comment "Delivery methods: agile, lean, | six sigma, by stage" "Automation"
+note "After Joaquín Peña Fernández, Crossing the Chasm with Wardley Maps, p. 57" [0.03, 0.04]
+%% Redrawn from the figure "Ideal flow using Continuous Delivery in an organization" (p. 57).
+%% Peña draws the organisation with two needs and places practices (strategy, governance, sell,
+%% marketing), the things it builds (proof of concept, prototype, pilot, MVP, product, service)
+%% and the delivery methods (experiments, automation) on the evolution axis, without dependency
+%% lines between them. We keep it that way, so the graph checks are off for this map.
+%% no-graph-check

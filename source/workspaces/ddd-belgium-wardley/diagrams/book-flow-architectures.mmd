@@ -1,0 +1,68 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Producer" [0.95, 0.36]
+anchor "Consumer" [0.95, 0.50]
+component "Flow integration" [0.86, 0.42]
+component "Source" [0.84, 0.62]
+component "Sink" [0.84, 0.80]
+component "Interface" [0.72, 0.46]
+component "Logical connection" [0.66, 0.56]
+component "Processor" [0.64, 0.74]
+component "Discovery" [0.60, 0.14]
+component "Protocol" [0.48, 0.26]
+component "Metadata format" [0.44, 0.34]
+component "Payload data format" [0.40, 0.20]
+component "Queue" [0.46, 0.80]
+component "Infrastructure" [0.18, 0.90]
+
+"Producer" -> "Flow integration"
+"Producer" -> "Sink"
+"Consumer" -> "Flow integration"
+"Consumer" -> "Source"
+"Flow integration" -> "Interface"
+"Flow integration" -> "Protocol"
+"Interface" -> "Discovery"
+"Interface" -> "Logical connection"
+"Protocol" -> "Metadata format"
+"Protocol" -> "Payload data format"
+"Logical connection" -> "Processor"
+"Logical connection" -> "Infrastructure"
+"Source" -> "Processor"
+"Source" -> "Infrastructure"
+"Sink" -> "Processor"
+"Sink" -> "Infrastructure"
+"Processor" -> "Queue"
+"Processor" -> "Infrastructure"
+"Queue" -> "Infrastructure"
+"Discovery" -> "Infrastructure"
+
+%% label-side "Flow integration" left
+%% label-side "Interface" left
+%% label-side "Logical connection" left
+%% label-side "Processor" right
+%% label-side "Protocol" left
+%% label-side "Metadata format" right
+%% label-side "Payload data format" left
+%% label-side "Discovery" left
+%% allow-crossing "Interface"
+%% allow-crossing "Logical connection"
+%% allow-crossing "Flow integration"
+%% leaf "Discovery"
+%% leaf "Metadata format"
+%% leaf "Payload data format"
+%% direct-need "Producer" "Sink"
+%% direct-need "Consumer" "Source"
+%% direct-need "Logical connection" "Infrastructure"
+%% direct-need "Source" "Infrastructure"
+%% direct-need "Sink" "Infrastructure"
+%% direct-need "Processor" "Infrastructure"
+%% direct-need "Discovery" "Infrastructure"
+note "After James Urquhart, Flow Architectures, figure 3-24, p. 71" [0.03, 0.04]
+%% Redrawn from "Our final map of the current state of flow needs" (O'Reilly, 2021), checked link for
+%% link against the figure at high resolution on 17 Oct. Producer and consumer both need the flow
+%% integration; the producer also reaches the sink and the consumer the source. The integration
+%% rests on the interface and the protocol; the interface on discovery and the logical connection;
+%% the protocol on the two formats. Source, sink and the logical connection run through the
+%% processor; the processor feeds the queue; and six lines fan into infrastructure. Two of those six
+%% (from the logical connection and from the source) are read off a dense drawing and stay a judgement.

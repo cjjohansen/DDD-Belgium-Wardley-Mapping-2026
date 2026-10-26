@@ -1,0 +1,36 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Tea shop" [0.88, 0.66]
+anchor "Customer" [0.88, 0.84]
+component "Cup of tea" [0.75, 0.75]
+component "Cup" [0.56, 0.76]
+component "Tea leaves" [0.46, 0.84]
+component "Hot water" [0.56, 0.92]
+component "Kettle" [0.42, 0.55]
+component "Cold water" [0.28, 0.80]
+component "Tap" [0.14, 0.90]
+component "Power" [0.28, 0.94]
+
+"Tea shop" -> "Cup of tea"
+"Customer" -> "Cup of tea"
+"Cup of tea" -> "Cup"
+"Cup of tea" -> "Tea leaves"
+"Cup of tea" -> "Hot water"
+"Hot water" -> "Kettle"
+"Kettle" -> "Cold water"
+"Cold water" -> "Tap"
+"Kettle" -> "Power"
+%% label-side "Cup" left
+%% label-side "Kettle" left
+component "Hand brewing" [0.56, 0.30]
+"Cup of tea" -> "Hand brewing"
+%% label-side "Hand brewing" left
+%% constraint "Customer"
+note "No customers? The constraint is outside the shop" [0.42, 0.06]
+note "Get seen: a sign in the street, a menu online" [0.34, 0.06]
+
+%% Hand brewing is the staff's own skill; the map stops there.
+%% leaf "Hand brewing"
+%% partial
+

@@ -1,0 +1,41 @@
+title Agentic delivery: reference maps (draft)
+
+anchor Business [0.95, 0.50]
+component New features reach customers sooner [0.85, 0.50]
+Business->New features reach customers sooner
+// label-side New features reach customers sooner right
+component Code changes [0.66, 0.76]
+component AI coding agent [0.56, 0.80]
+component Architectural intent [0.50, 0.60]
+component Architecture decisions [0.36, 0.26]
+component Governance practice [0.22, 0.18]
+component Governance model [0.22, 0.78]
+component Delivery platform [0.30, 0.86]
+New features reach customers sooner->Code changes
+New features reach customers sooner->Delivery platform
+Code changes->AI coding agent
+AI coding agent->Architectural intent
+Architectural intent->Architecture decisions
+Architecture decisions->Governance practice
+Architectural intent->Governance model
+// constraint Architecture decisions
+// submap Delivery platform
+// label-side Architecture decisions left
+// label-side Governance practice left
+// label-side AI coding agent left
+// label-side Architectural intent left
+// move Architecture decisions 0.56
+evolve Governance practice 0.52
+// future Governance practice Guard rails and feedback
+component Product hypothesis [0.74, 0.46]
+component Specification [0.42, 0.56]
+component Experience model [0.30, 0.10]
+New features reach customers sooner->Product hypothesis
+Product hypothesis->Specification
+Specification->Experience model
+// label-side Product hypothesis right
+// label-side Specification right
+// label-side Experience model right
+// comment The open end: the experience model stays | in genesis. How much of it can AI do? Experience model
+note Play: decisions move to the teams; ADRs become learning, not approval [0.06, 0.04]
+note Governance moves from gates to guard rails and feedback loops [0.01, 0.04]

@@ -1,0 +1,20 @@
+{
+  "name": "ddd-belgium-wardley-map-2026",
+  "private": true,
+  "description": "Wardley mapping workshop at DDD Belgium, 20 October 2026: deck, maps, reading list",
+  "scripts": {
+    "assets": "node -e \"const fs=require('fs');fs.cpSync('../deck/assets','workspaces/ddd-belgium-wardley/assets',{recursive:true});fs.cpSync('../deck/assets/fonts','assets/fonts',{recursive:true})\"",
+    "dev": "marp -s . -p 8080",
+    "validate": "node scripts/validate.mjs workspaces/ddd-belgium-wardley/ddd-belgium-wardley.md",
+    "diagrams": "node scripts/render-diagrams.mjs -w ddd-belgium-wardley",
+    "ddd": "node scripts/gen-reveal.mjs && node scripts/render-diagrams.mjs -w ddd-belgium-wardley && node scripts/validate.mjs workspaces/ddd-belgium-wardley/ddd-belgium-wardley.md && marp --no-stdin workspaces/ddd-belgium-wardley/ddd-belgium-wardley.md -o workspaces/ddd-belgium-wardley/ddd-belgium-wardley.html"
+  },
+  "devDependencies": {
+    "@fontsource/fira-code": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "@fontsource/syne": "^5.3.0",
+    "@marp-team/marp-cli": "^4.5.1",
+    "mermaid": "^12.1.0"
+  }
+}

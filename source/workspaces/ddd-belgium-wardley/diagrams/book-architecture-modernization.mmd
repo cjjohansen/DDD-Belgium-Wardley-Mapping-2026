@@ -1,0 +1,33 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Customer" [0.95, 0.54]
+component "Enjoy great food without cooking" [0.86, 0.54]
+component "Customer mobile app" [0.74, 0.56]
+component "Menu" [0.62, 0.72]
+component "Ordering" [0.58, 0.62]
+component "Payments" [0.50, 0.82]
+component "Cloud platform" [0.28, 0.86]
+
+"Customer" -> "Enjoy great food without cooking"
+"Enjoy great food without cooking" -> "Customer mobile app"
+"Customer mobile app" -> "Menu"
+"Customer mobile app" -> "Ordering"
+"Menu" -> "Cloud platform"
+"Ordering" -> "Payments"
+"Payments" -> "Cloud platform"
+
+%% label-side "Enjoy great food without cooking" right
+%% label-side "Customer mobile app" left
+%% label-side "Ordering" left
+%% label-side "Menu" right
+%% label-side "Payments" right
+%% comment "Tune's first theme: nothing in genesis | or custom built, so no future source | of competitive advantage" "Ordering"
+%% comment "Second theme: the company builds | commodity components like these | in house instead of buying them" "Payments"
+note "After Nick Tune, Architecture Modernization, figure 5.7, p. 75: the food delivery map, with the themes of figure 5.8" [0.03, 0.04]
+%% Checked link for link against the figure on 17 Oct: the app needs ordering and the menu; ordering
+%% needs payments; the menu and payments rest on the cloud platform.
+%% Redrawn from CJ's copy (Manning, 2024), chapter 5 Wardley Mapping, section 5.2: the customer
+%% value chain of a food delivery company, built through the six steps of the Wardley Mapping
+%% Canvas (figures 5.3 to 5.7). Figure 5.8 strips the text and reads two themes off the shape,
+%% which are the two comments here.

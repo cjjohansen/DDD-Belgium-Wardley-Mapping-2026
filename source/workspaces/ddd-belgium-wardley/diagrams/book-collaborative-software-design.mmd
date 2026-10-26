@@ -1,0 +1,84 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Movie visitor" [0.95, 0.62]
+anchor "Planning and scheduling" [0.95, 0.26]
+component "Publish weekly schedule" [0.86, 0.26]
+component "Search for movies" [0.80, 0.38]
+component "Pick a movie screening" [0.86, 0.50]
+component "Select number of tickets" [0.80, 0.62]
+component "Paying for tickets" [0.86, 0.76]
+component "Receive tickets" [0.80, 0.92]
+component "Back office" [0.66, 0.16]
+component "Movies pages" [0.66, 0.34]
+component "Seat picker" [0.66, 0.56]
+component "Payment page" [0.66, 0.72]
+component "Ticketing" [0.66, 0.90]
+component "Weekly schedule" [0.48, 0.20]
+component "Movies" [0.42, 0.40]
+component "Payment" [0.42, 0.72]
+component "Ticket reservation" [0.48, 0.86]
+component "Cinema rooms" [0.32, 0.48]
+component "Database" [0.22, 0.36]
+component "Payment provider" [0.20, 0.72]
+
+"Planning and scheduling" -> "Publish weekly schedule"
+"Movie visitor" -> "Search for movies"
+"Movie visitor" -> "Pick a movie screening"
+"Movie visitor" -> "Select number of tickets"
+"Movie visitor" -> "Paying for tickets"
+"Movie visitor" -> "Receive tickets"
+"Publish weekly schedule" -> "Back office"
+"Search for movies" -> "Movies pages"
+"Pick a movie screening" -> "Movies pages"
+"Select number of tickets" -> "Seat picker"
+"Paying for tickets" -> "Payment page"
+"Receive tickets" -> "Ticketing"
+"Back office" -> "Weekly schedule"
+"Movies pages" -> "Movies"
+"Seat picker" -> "Movies"
+"Seat picker" -> "Ticket reservation"
+"Payment page" -> "Payment"
+"Ticketing" -> "Ticket reservation"
+"Weekly schedule" -> "Movies"
+"Movies" -> "Cinema rooms"
+"Movies" -> "Database"
+"Cinema rooms" -> "Database"
+"Ticket reservation" -> "Movies"
+"Payment" -> "Payment provider"
+
+%% hide-x-axis
+%% label-side "Publish weekly schedule" left
+%% label-side "Search for movies" left
+%% label-side "Pick a movie screening" left
+%% label-side "Select number of tickets" left
+%% label-side "Paying for tickets" left
+%% label-side "Receive tickets" left
+%% label-side "Back office" left
+%% label-side "Movies pages" left
+%% label-side "Seat picker" left
+%% label-side "Payment page" right
+%% label-side "Ticketing" left
+%% label-side "Weekly schedule" left
+%% label-side "Movies" left
+%% label-side "Payment" left
+%% label-side "Ticket reservation" right
+%% label-side "Cinema rooms" right
+%% label-side "Database" left
+%% label-side "Payment provider" left
+%% label-size 15
+%% allow-crossing "Movies"
+%% allow-crossing "Seat picker"
+%% direct-need "Seat picker" "Movies"
+%% direct-need "Movies" "Database"
+%% leaf "Database"
+%% leaf "Payment provider"
+%% domain-bracket "Needs" 0.92 0.76
+%% domain-bracket "Systems" 0.72 0.60
+%% domain-bracket "Back end" 0.54 0.14
+note "After Roozen, Baas-Schwegler and Verhoeven, Collaborative Software Design, figure 10.10, p. 318 (CC BY-SA)" [0.03, 0.04]
+%% Redrawn from CJ's copy (Manning, 2024), chapter 10 Managing unsolvable problems: a user needs
+%% map of a cinema, built in a workshop with the user journey as the needs, the software systems
+%% underneath and the back end below that. No evolution axis: the group mapped the value chain
+%% only (figure 10.9 is the chain, 10.10 the completed map). The book's figure is CC BY-SA, based
+%% on Team Topologies' user needs mapping.

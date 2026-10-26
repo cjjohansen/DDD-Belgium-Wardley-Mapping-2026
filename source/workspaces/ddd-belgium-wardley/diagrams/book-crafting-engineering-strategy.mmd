@@ -1,0 +1,38 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Author" [0.95, 0.34]
+anchor "Reader" [0.95, 0.62]
+component "Create content" [0.82, 0.34]
+component "Find content" [0.82, 0.56]
+component "Read content" [0.82, 0.70]
+component "Search index" [0.50, 0.30]
+component "Document editor" [0.46, 0.54]
+component "Document reader" [0.60, 0.86]
+
+pipeline "Document editor" {
+component "Today's editor" [0.50]
+component "AI-enhanced editing" [0.66]
+component "AI-led editing" [0.84]
+}
+
+"Author" -> "Create content"
+"Reader" -> "Find content"
+"Reader" -> "Read content"
+"Create content" -> "Search index"
+"Create content" -> "Document editor"
+"Find content" -> "Search index"
+"Read content" -> "Document reader"
+
+%% pipeline-arrow "Today's editor" "AI-led editing"
+%% label-side "Create content" left
+%% label-side "Find content" left
+%% label-side "Read content" right
+%% label-side "Search index" left
+%% leaf "Search index"
+%% comment "Larson's future state: editing moves | through AI-enhanced to AI-led, human-reviewed | editing; the search index is where to differentiate" "Document editor"
+note "After Will Larson, Crafting Engineering Strategy: the knowledge base map and its editing pipeline (lethain.com/wardley-mapping)" [0.03, 0.04]
+%% Redrawn from the figures in Larson's free chapter (intro-wardley-init.png and
+%% intro-wardley-future-pipeline.png, 17 Oct): an author creates content, a reader finds and reads
+%% it; the search index is custom built, the document editor a product, the document reader a
+%% commodity. The pipeline is his: today's editor, then AI-enhanced, then AI-led and human-reviewed.

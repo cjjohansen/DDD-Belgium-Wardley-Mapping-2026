@@ -1,0 +1,4 @@
+# Marp CLI config: enables raw HTML (needed for islands, iframes and <mark>) and registers the theme.
+html: true
+themeSet: ./themes
+allowLocalFiles: true

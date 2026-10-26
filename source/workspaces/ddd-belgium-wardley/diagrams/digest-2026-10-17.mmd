@@ -1,0 +1,52 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Engineering organisation" [0.95, 0.44]
+component "Changes delivered safely by agents" [0.86, 0.44]
+component "Understanding ambiguous requirements" [0.76, 0.12]
+component "Agent harness" [0.70, 0.50]
+component "Authorisation of agent actions" [0.60, 0.16]
+component "Formal agent workflows" [0.52, 0.30]
+component "Root-cause analysis by agents" [0.46, 0.50]
+component "Routing of routine decisions" [0.38, 0.60]
+component "Model training" [0.30, 0.70]
+component "Inference" [0.20, 0.88]
+
+"Engineering organisation" -> "Changes delivered safely by agents"
+"Changes delivered safely by agents" -> "Understanding ambiguous requirements"
+"Changes delivered safely by agents" -> "Agent harness"
+"Agent harness" -> "Authorisation of agent actions"
+"Agent harness" -> "Formal agent workflows"
+"Agent harness" -> "Root-cause analysis by agents"
+"Agent harness" -> "Routing of routine decisions"
+"Root-cause analysis by agents" -> "Inference"
+"Routing of routine decisions" -> "Inference"
+"Model training" -> "Inference"
+"Agent harness" -> "Model training"
+
+evolve "Model training" 0.78
+%% constraint "Authorisation of agent actions"
+
+%% label-side "Changes delivered safely by agents" right
+%% label-side "Understanding ambiguous requirements" right
+%% label-side "Agent harness" right
+%% label-side "Authorisation of agent actions" right
+%% label-side "Formal agent workflows" left
+%% label-side "Root-cause analysis by agents" left
+%% label-side "Routing of routine decisions" left
+%% label-side "Model training" left
+
+%% Genesis work: the papers describe the problem, nothing sits under them yet
+%% leaf "Understanding ambiguous requirements"
+%% leaf "Authorisation of agent actions"
+%% leaf "Formal agent workflows"
+
+%% comment "Agent Step-Up: in many runtimes | an approved action can be changed | after the approval" "Authorisation of agent actions"
+%% comment "JevAgentHarness: a small 4B model takes | the routine tool choices, the big model | the rest. 81 to 89 percent cheaper" "Routing of routine decisions"
+%% comment "Athanor: four agents post-trained | a model on their own. Training | becomes something agents do" "Model training"
+%% comment "FDE-Gym: agents still fail when | the request is ambiguous. The | same open end as exercise 6" "Understanding ambiguous requirements"
+note "One day of research news on one map: Martin Rosén-Lidholm's Daily D4 Digest, 17 October 2026 (chronograph.rosenlidholm.se)" [0.03, 0.04]
+%% Items from the digest not on the map: Diviner is the root-cause analysis component (Meta, in
+%% production, human-governed stages); FAOPs (JPMorgan) is the formal workflows component. The
+%% Minecraft team, Agent Status Protocol and Structural Signal Retriever are left out to keep the
+%% map readable. Evolution positions are our judgement, not the digest's.

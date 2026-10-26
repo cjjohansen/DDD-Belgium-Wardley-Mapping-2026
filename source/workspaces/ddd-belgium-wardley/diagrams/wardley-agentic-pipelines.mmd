@@ -1,0 +1,41 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Business" [0.95, 0.80]
+component "New features reach customers sooner" [0.86, 0.80]
+component "Code changes" [0.68, 0.80]
+component "Quality control" [0.46, 0.55]
+component "Specification" [0.24, 0.50]
+
+pipeline "Code changes" {
+component "By hand" [0.66]
+component "AI-assisted" [0.78]
+component "AI coding agent" [0.90]
+}
+
+pipeline "Quality control" {
+component "AI evals" [0.18]
+component "Review by people" [0.38]
+component "Automated tests in CI" [0.84]
+}
+
+pipeline "Specification" {
+component "Written requirements" [0.30]
+component "Event model and specs" [0.52]
+component "User stories" [0.74]
+}
+
+"Business" -> "New features reach customers sooner"
+"New features reach customers sooner" -> "Code changes"
+"Code changes" -> "Quality control"
+"Quality control" -> "Specification"
+
+%% label-side "New features reach customers sooner" left
+%% pipeline-arrow "By hand" "AI coding agent"
+%% pipeline-arrow "Written requirements" "Event model and specs"
+note "Code changes moved right fast. Quality control did not follow" [0.08, 0.04]
+%% One way to map exercise 3. Code changes reach customers only through quality control, which checks
+%% against the specification. Each option sits where it is today; an arrow means we expect
+%% people to move from one option to the other. The AI coding agent is code production as a
+%% utility (right); AI evals are a new invention (left); event models move right as they become
+%% machine-readable and standard.

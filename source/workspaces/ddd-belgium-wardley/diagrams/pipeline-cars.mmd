@@ -1,0 +1,22 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Driver" [0.92, 0.62]
+component "Getting around" [0.78, 0.62]
+component "Car" [0.62, 0.62]
+component "Propulsion" [0.40, 0.62]
+
+pipeline Propulsion {
+component "Electric" [0.52]
+component "Hybrid" [0.68]
+component "Combustion" [0.88]
+}
+
+"Driver" -> "Getting around"
+"Getting around" -> "Car"
+"Car" -> "Propulsion"
+
+note "One need, three ways to meet it, each at its own stage" [0.26, 0.52]
+%% Pipeline example for the appendix (workshop plan, legend: full legend). Placements are a
+%% judgement for discussion: combustion is a commodity, hybrid a mature product, electric a
+%% product still evolving. Each evolves on its own clock.

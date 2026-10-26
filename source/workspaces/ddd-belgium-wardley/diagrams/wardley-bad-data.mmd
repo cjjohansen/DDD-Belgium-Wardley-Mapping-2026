@@ -1,0 +1,29 @@
+wardley-beta
+size [1280, 720]
+
+anchor "Business" [0.92, 0.50]
+component "Decisions we trust" [0.80, 0.50]
+component "Reports" [0.66, 0.62]
+component "Shared data" [0.52, 0.42]
+component "Data model" [0.36, 0.26]
+component "Data stewardship" [0.24, 0.18]
+component "Data pipelines" [0.36, 0.66]
+component "Cloud storage" [0.16, 0.86]
+
+"Business" -> "Decisions we trust"
+"Decisions we trust" -> "Reports"
+"Reports" -> "Shared data"
+"Shared data" -> "Data model"
+"Shared data" -> "Data pipelines"
+"Data model" -> "Data stewardship"
+"Data pipelines" -> "Cloud storage"
+
+note "Pipelines and storage are cheap" [0.46, 0.70]
+note "Bad data comes from missing design and stewardship" [0.08, 0.30]
+
+%% DRAFT, not reviewed by CJ. The data case from the workshop plan ("One pattern, three cases"):
+%% producing and moving data got cheap, so trust is now limited by the data model and its
+%% stewardship, low on the map and under-funded. Parallel to the agentic case (code review).
+%% constraint "Data stewardship"
+%% Data stewardship is a practice; the map stops there.
+%% leaf "Data stewardship"
