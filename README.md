@@ -9,14 +9,14 @@ Wardley mapping, one click at a time.
 ## Quick Start
 
 1. Clone this repository
-2. Open `deck/ddd-belgium-wardley.html` in your browser (self-contained, works offline)
+2. Open `deck/ddd-belgium-wardley.html` in your browser (works offline; it loads its fonts and images from `deck/assets/`)
 3. Browse [exercises](exercises/) for workshop materials
 4. See [resources.md](resources.md) for books and tools
 
 ## Workshop Materials
 
-- **[HTML Deck](deck/ddd-belgium-wardley.html)** - Interactive presentation (248 KB, all assets embedded)
-- **[PDF Deck](deck/ddd-belgium-wardley.pdf)** - Printable version (4.9 MB)
+- **[HTML Deck](deck/ddd-belgium-wardley.html)** - Interactive presentation (273 KB; fonts and images in `deck/assets/`)
+- **[PDF Deck](deck/ddd-belgium-wardley.pdf)** - Printable version (196 pages, 22 MB)
 - **[Handout](handout/ddd-belgium-wardley-handout.pdf)** - 10 A4 pages: worksheets for the exercises and a short reference
 - **[Miro board](https://miro.com/app/board/uXjVEcI-7Zo=/)** - The board we map on during the workshop
 - **[Exercises](exercises/)** - Five group exercises on one scenario
