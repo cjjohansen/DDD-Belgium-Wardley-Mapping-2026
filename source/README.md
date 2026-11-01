@@ -41,8 +41,14 @@ serves the deck on http://localhost:8080.
 
 The output lands next to the sources, as it did in the draft repository: the maps in
 `workspaces/ddd-belgium-wardley/assets/diagrams/` and the deck as `workspaces/ddd-belgium-wardley/ddd-belgium-wardley.html`.
-Those folders are ignored by git here. To publish a change, copy the new SVGs to `../deck/assets/diagrams/`
-and the HTML to `../deck/`.
+Those folders are ignored by git here. To publish a map change, copy the new SVGs to `../deck/assets/diagrams/`.
+The renderer uses the published black-grey-sand palette, so a fresh render of an unchanged map is byte for byte
+the published SVG. Two exceptions: `wardley-agentic-reveal-05` and `-06` render "Business" and "New features reach
+customers sooner" where the published SVGs still say "Management" and "Time to market". Eleven published SVGs have
+no `.mmd` here (the three book maps below, `methods-overlay-1` to `-3` and the five `wardley-agentic-ex*` maps).
+
+Do not copy the HTML to `../deck/` yet: `themes/galaxitech.css` still holds the older deep-blue palette, while the
+published deck uses black-grey-sand.
 
 `npm run assets` is the only addition to the draft's `package.json`. The images and fonts already live in
 `../deck/assets/`, so they are copied in rather than kept twice.

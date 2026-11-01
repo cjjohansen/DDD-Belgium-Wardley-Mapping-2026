@@ -37,8 +37,9 @@ const browserPath = process.env.CHROME_PATH || [
 ].find(existsSync)
 if (!browserPath) { console.error('No Chrome/Edge found; set CHROME_PATH.'); process.exit(2) }
 
-// design-system tokens (same values as themes/galaxitech.css)
-const T = { void: '#05070c', deep900: '#0a1122', deep800: '#0f1a2e', line: '#1f2c47', lineStrong: '#56678a', ink: '#e6e8ee', inkMuted: '#9aa3b5', inkSubtle: '#7f889c', gold: '#eebd2b' }
+// design-system tokens: the black-grey-sand palette of the published deck (design-systems galaxitech-marp
+// fc832b7, palette black-grey-sand); sand takes the gold role. themes/galaxitech.css still holds the deep-blue values.
+const T = { void: '#000', deep900: '#0c0d0f', deep800: '#17181b', line: '#2a2c31', lineStrong: '#6a6d75', ink: '#e6e8ee', inkMuted: '#b0b2b8', inkSubtle: '#8a8d94', gold: '#d6c9ab', grid: 'rgba(106,109,117,.3)' }
 const fonts = [
   ['Sora', 400, 'sora-latin-400-normal.woff2'],
   ['Sora', 600, 'sora-latin-600-normal.woff2'],
@@ -55,7 +56,7 @@ const config = {
     secondaryColor: T.deep800, tertiaryColor: T.deep900, textColor: T.ink,
     // red is reserved for the red switch, so evolution arrows are gold
     wardley: {
-      backgroundColor: T.deep900, axisColor: T.lineStrong, axisTextColor: T.inkMuted, gridColor: 'rgba(86,103,138,.25)',
+      backgroundColor: T.deep900, axisColor: T.lineStrong, axisTextColor: T.inkMuted, gridColor: T.grid,
       componentFill: T.deep900, componentStroke: T.ink, componentLabelColor: T.ink, linkStroke: T.lineStrong,
       evolutionStroke: T.gold, annotationStroke: T.gold, annotationTextColor: T.ink, annotationFill: T.deep800,
     },
