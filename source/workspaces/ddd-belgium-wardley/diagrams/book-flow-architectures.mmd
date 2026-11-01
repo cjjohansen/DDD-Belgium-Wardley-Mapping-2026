@@ -17,9 +17,9 @@ component "Queue" [0.46, 0.80]
 component "Infrastructure" [0.18, 0.90]
 
 "Producer" -> "Flow integration"
-"Producer" -> "Sink"
+"Producer" -> "Source"
 "Consumer" -> "Flow integration"
-"Consumer" -> "Source"
+"Consumer" -> "Sink"
 "Flow integration" -> "Interface"
 "Flow integration" -> "Protocol"
 "Interface" -> "Discovery"
@@ -45,14 +45,15 @@ component "Infrastructure" [0.18, 0.90]
 %% label-side "Metadata format" right
 %% label-side "Payload data format" left
 %% label-side "Discovery" left
+%% label-side "Consumer" left
 %% allow-crossing "Interface"
 %% allow-crossing "Logical connection"
 %% allow-crossing "Flow integration"
 %% leaf "Discovery"
 %% leaf "Metadata format"
 %% leaf "Payload data format"
-%% direct-need "Producer" "Sink"
-%% direct-need "Consumer" "Source"
+%% direct-need "Producer" "Source"
+%% direct-need "Consumer" "Sink"
 %% direct-need "Logical connection" "Infrastructure"
 %% direct-need "Source" "Infrastructure"
 %% direct-need "Sink" "Infrastructure"
@@ -60,8 +61,10 @@ component "Infrastructure" [0.18, 0.90]
 %% direct-need "Discovery" "Infrastructure"
 note "After James Urquhart, Flow Architectures, figure 3-24, p. 71" [0.03, 0.04]
 %% Redrawn from "Our final map of the current state of flow needs" (O'Reilly, 2021), checked link for
-%% link against the figure at high resolution on 17 Oct. Producer and consumer both need the flow
-%% integration; the producer also reaches the sink and the consumer the source. The integration
+%% link against the figure at high resolution on 17 Oct; the producer and consumer links corrected on
+%% 1 Nov (the source promises event data to the producer, the sink to the consumer; figs. 3-11, 3-22,
+%% 3-24). Producer and consumer both need the flow integration; the producer also reaches the source
+%% and the consumer the sink. The integration
 %% rests on the interface and the protocol; the interface on discovery and the logical connection;
 %% the protocol on the two formats. Source, sink and the logical connection run through the
 %% processor; the processor feeds the queue; and six lines fan into infrastructure. Two of those six
