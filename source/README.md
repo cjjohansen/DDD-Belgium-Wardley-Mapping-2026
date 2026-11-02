@@ -23,7 +23,7 @@ the rendered maps in [`../deck/assets/diagrams/`](../deck/assets/diagrams/), the
 | `scripts/gen-reveal.mjs` | Writes the step-by-step reveal maps (`*-reveal-NN.mmd`) and the `.owm` files |
 | `scripts/render-diagrams.mjs` | Renders each `.mmd` to SVG in the GalaxiTech look and checks for overlaps |
 | `scripts/validate.mjs` | Checks the deck slide by slide (overflow, overlaps, unknown classes) |
-| `package.json`, `.marprc.yml` | The npm scripts and the Marp configuration |
+| `package.json`, `package-lock.json`, `.marprc.yml` | The npm scripts, the locked dependency versions and the Marp configuration |
 
 ## Rebuild it
 
@@ -31,7 +31,7 @@ Needs Node 20 or newer and a local Chrome or Edge (set `CHROME_PATH` if it is no
 Run everything from this folder:
 
 ```bash
-npm install
+npm ci           # install the exact versions in package-lock.json
 npm run assets   # copy the images and fonts from ../deck/assets, which the deck and the renderer need
 npm run ddd      # reveal maps, render every map, validate the deck, build the HTML
 ```
@@ -43,15 +43,17 @@ The output lands next to the sources, as it did in the draft repository: the map
 `workspaces/ddd-belgium-wardley/assets/diagrams/` and the deck as `workspaces/ddd-belgium-wardley/ddd-belgium-wardley.html`.
 Those folders are ignored by git here. To publish a map change, copy the new SVGs to `../deck/assets/diagrams/`.
 The renderer uses the published black-grey-sand palette, so a fresh render of an unchanged map is byte for byte
-the published SVG. Two exceptions: `wardley-agentic-reveal-05` and `-06` render "Business" and "New features reach
-customers sooner" where the published SVGs still say "Management" and "Time to market". Eleven published SVGs have
-no `.mmd` here (the three book maps below, `methods-overlay-1` to `-3` and the five `wardley-agentic-ex*` maps).
+the published SVG. That needs mermaid 12.1.0, the version design-systems locks: `package.json` pins it exactly
+and `package-lock.json` pins the rest, so install with `npm ci`, not `npm install`. Two exceptions:
+`wardley-agentic-reveal-05` and `-06` render "Business" and "New features reach customers sooner" where the
+published SVGs still say "Management" and "Time to market". Eleven published SVGs have no `.mmd` here (the three
+book maps below, `methods-overlay-1` to `-3` and the five `wardley-agentic-ex*` maps).
 
 Do not copy the HTML to `../deck/` yet: `themes/galaxitech.css` still holds the older deep-blue palette, while the
 published deck uses black-grey-sand.
 
-`npm run assets` is the only addition to the draft's `package.json`. The images and fonts already live in
-`../deck/assets/`, so they are copied in rather than kept twice.
+`npm run assets` and the exact mermaid version are the only changes to the draft's `package.json`. The images and
+fonts already live in `../deck/assets/`, so they are copied in rather than kept twice.
 
 ## Book maps and their sources
 
